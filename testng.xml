@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Smoke Testing" parallel="classes" thread-count="2">
+
+	<!-- <listeners> <listener class-name="generic.AllureListener"></listener> 
+		<listener class-name="generic.ListenerForTest001"></listener> <listener class-name="generic.Listener"></listener> 
+		</listeners> -->
+	<test  name="Parallel Test">
+		<classes>
+			<class name="test.Test001_Login_Logout" />
+			<class name="test.Test002_Create_Order" />
+			<class name="test.Test009_Product_Page_With_All_Cases" />
+			<class name="test.Test003_Convert_Quote_To_Order" />
+			<class name="test.Test010_Category_And_Collections_Page" />
+			<class name="test.Test004_Edit_Quote_01" />
+			<class name="test.Test005_Edit_Quote_02" />
+			<class name="test.Test006_Draft" />
+			<class name="test.Test007_Buyer_Switching" />
+			<class name="test.Test008_Container" />
+			<!--<class name="test.CreateCustomerTest" />
+			<class name="test.ProductDetailsPageTest"/>
+			<class name="test.CartSummaryTest"/> -->
+		</classes>
+	</test>
+</suite> 

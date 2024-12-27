@@ -1,0 +1,17 @@
+Selenium-Java version: 4.21.0 taken from mvnrepository.com
+
+TestNG version: 7.10.1 taken from mvnrepository.com
+
+Apache POI version: 5.2.5 taken from mvnrepository.com
+
+Allure version: 2.24.0 taken from git realeses
+
+
+driver: folder for driver executable (like chrome,firefox etc)
+
+Config: folder for storing data(like browser, URL)
+
+ExcelData: folder for fetching data from excel(i.e. this is like data driven framework)
+
+
+
