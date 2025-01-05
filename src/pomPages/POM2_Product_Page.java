@@ -22,11 +22,13 @@ import generic.BaseTest;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Param;
 import io.qameta.allure.Step;
+import utility.JSONUtil;
 
 public class POM2_Product_Page extends BaseTest {
-	@FindBy(xpath = "(//div[@class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0\"])[2]//button")
+	
+	@FindBy(xpath="//button[@id='sidebar-item-2']")
 	WebElement productBtn;
-
+	
 	@FindBy(xpath = "//input[@id='global-search']")
 	WebElement searchTextbox;
 
@@ -164,6 +166,8 @@ public class POM2_Product_Page extends BaseTest {
 // Click on product button on dashboard
 	@Step("Click on product button on dashboard")
 	public void clickProduct() throws Exception {
+//		System.out.println(JSONUtil.getXPath("productBtn"));
+//		WebElement productBtn = driver.findElement(By.xpath(JSONUtil.getXPath("productBtn")));
 		wait.until(ExpectedConditions.elementToBeClickable(productBtn)).click();
 	}
 
@@ -214,7 +218,8 @@ public class POM2_Product_Page extends BaseTest {
 //		textbox.sendKeys(product_Name); //user can also enter data
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		Assert.assertTrue(searchTextbox.isDisplayed(), "Both actual and expected are not same");
-		Thread.sleep(1000);		searchTextbox.sendKeys("chair");
+		Thread.sleep(3000);		
+		searchTextbox.sendKeys("chair");
 		for (int i = 0; i <= searchDd.size(); i++) {
 			String text = searchDd.get(i).getText();
 			System.out.print(text + " ");

@@ -41,6 +41,7 @@ public class Test003_Convert_Quote_To_Order extends BaseTest {
 	@Severity(SeverityLevel.BLOCKER)
 	@Description("Test Description: Validating adding products to cart Test")
 	@Story("Story Name: To check adding products to cart")
+	
 	public void selectProduct() throws Exception {
 		pomPages.POM2_Product_Page productPage = new pomPages.POM2_Product_Page();
 		productPage.searchProductBox();

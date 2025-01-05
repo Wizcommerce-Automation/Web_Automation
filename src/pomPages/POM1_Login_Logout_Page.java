@@ -62,7 +62,8 @@ public class POM1_Login_Logout_Page {
 
 	// Verifying login page Logo
 	@Step("Get page Logo")
-	public boolean validateLogo() {
+	public boolean validateLogo() throws InterruptedException {
+		Thread.sleep(1000);
 		boolean pageLogo = pageImg.isDisplayed();
 		return pageLogo;
 	}

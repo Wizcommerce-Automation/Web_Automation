@@ -213,7 +213,7 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 	@FindBy(xpath = "//button[text()='Cancel']")
 	WebElement cancelBtn;
 
-	@FindBy(xpath = "//div[contains(text(),'Changing PriceList may change product availability and prices')]")
+	@FindBy(xpath = "//div[contains(text(),'Changing Pricelist may change product availability and prices')]")
 	WebElement alertMsg;
 
 	@FindBy(xpath = "(//div[@id='scroll_div-0'])[1]")
@@ -330,10 +330,10 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 	@FindBy(xpath = "//button[@id=\"add_to_cart_41e044d2-2512-4b25-b395-fbf20d4dd85f\"]")
 	WebElement product_Qa;
 
-	@FindBy(xpath = "//div[@id=\"scroll_div-0\"]/parent::div/div[1]/div/div/div/div[2]/div/div[2]")
+	@FindBy(xpath = "//div[@id=\"scroll_div-0\"]/parent::div/div[1]/div/div/div/div[3]/div/div")
 	WebElement product_Demo_PriceRange;
 
-	@FindBy(xpath = "//div[@id=\"scroll_div-0\"]/parent::div/div[1]/div/div/div/div[2]/div/div[2]")
+	@FindBy(xpath = "//div[@id=\"scroll_div-0\"]/parent::div/div[1]/div/div/div/div[3]/div/div")
 	WebElement product_Qa_PriceRange;
 
 	@FindBy(xpath = "//p[text()=\"All Variants\"]/parent::div/parent::div")
@@ -1125,7 +1125,7 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 			}
 		}
 		Thread.sleep(3000);
-		assertEquals(alertMsg.getText(), "Changing PriceList may change product availability and prices",
+		assertEquals(alertMsg.getText(), "Changing Pricelist may change product availability and prices",
 				"Both actual and expected are not same");
 		Assert.assertTrue(applyBtn.isEnabled(), "Both actual and expected are not same");
 		Assert.assertTrue(cancelBtn.isEnabled(), "Both actual and expected are not same");
@@ -1147,7 +1147,7 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 			}
 		}
 		Thread.sleep(3000);
-		assertEquals(alertMsg.getText(), "Changing PriceList may change product availability and prices",
+		assertEquals(alertMsg.getText(), "Changing Pricelist may change product availability and prices",
 				"Both actual and expected are not same");
 		Assert.assertTrue(applyBtn.isEnabled(), "Both actual and expected are not same");
 		Assert.assertTrue(cancelBtn.isEnabled(), "Both actual and expected are not same");
@@ -1173,7 +1173,7 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 			}
 		}
 		Thread.sleep(3000);
-		assertEquals(alertMsg.getText(), "Changing PriceList may change product availability and prices",
+		assertEquals(alertMsg.getText(), "Changing Pricelist may change product availability and prices",
 				"Both actual and expected are not same");
 		Assert.assertTrue(applyBtn.isEnabled(), "Both actual and expected are not same");
 		Assert.assertTrue(cancelBtn.isEnabled(), "Both actual and expected are not same");

@@ -34,13 +34,13 @@ public class POM7_Draft extends BaseTest {
 	@FindBy(xpath = "(//div[@col-id=\"document_status\"])[2]")
 	WebElement draft;
 
-	@FindBy(xpath = "(//input[@aria-label=\"Reference ID Filter Input\"])[4]")
+	@FindBy(xpath = "(//input[@aria-label=\"Reference ID Filter Input\"])[3]")
 	WebElement referenceIDTextbox1;
 
 	@FindBy(xpath = "//div[@class=\"MuiGrid-root MuiGrid-container css-wz0ool\"]/div/p")
 	WebElement user;
 	
-	@FindBy(xpath="(//div[@col-id=\"system_id\"]/a/div)[24]")
+	@FindBy(xpath="((//div[@aria-rowindex=\"3\"])/div/a)[3]")
 	WebElement mainID;
 
 	public POM7_Draft() {

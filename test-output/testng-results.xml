@@ -1,133 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+<testng-results ignored="0" total="24" passed="24" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-21T14:36:22 IST" name="Default suite" finished-at="2024-12-21T14:37:33 IST" duration-ms="71053">
+  <suite started-at="2025-01-05T17:48:37 IST" name="Default suite" finished-at="2025-01-05T17:52:19 IST" duration-ms="221073">
     <groups>
     </groups>
-    <test started-at="2024-12-21T14:36:22 IST" name="Default test" finished-at="2024-12-21T14:37:33 IST" duration-ms="71053">
-      <class name="test.Test001_Login_Logout">
-        <test-method signature="openBrowser()[pri:1, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:23 IST" name="openBrowser" description="Launching browser and open URL" finished-at="2024-12-21T14:36:31 IST" duration-ms="8398" status="PASS">
+    <test started-at="2025-01-05T17:48:37 IST" name="Default test" finished-at="2025-01-05T17:52:19 IST" duration-ms="221073">
+      <class name="test.Test008_Container">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:48:38 IST" name="openBrowser" finished-at="2025-01-05T17:48:50 IST" duration-ms="11998" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="loginPageTitleTest()[pri:2, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:31 IST" name="loginPageTitleTest" description="Validating Login Page Title" finished-at="2024-12-21T14:36:31 IST" duration-ms="75" status="PASS">
+        <test-method signature="productButtonTest()[pri:1, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:48:50 IST" name="productButtonTest" description="Click on product button" finished-at="2025-01-05T17:48:52 IST" duration-ms="2321" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginPageTitleTest -->
-        <test-method signature="logoTest()[pri:3, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:31 IST" name="logoTest" description="Validating Page Logo" finished-at="2024-12-21T14:36:32 IST" duration-ms="71" status="PASS">
+        </test-method> <!-- productButtonTest -->
+        <test-method signature="selectProduct()[pri:2, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:48:52 IST" name="selectProduct" description="Adding products to cart" finished-at="2025-01-05T17:49:05 IST" duration-ms="12630" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoTest -->
-        <test-method signature="headingTest()[pri:4, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:32 IST" name="headingTest" description="Validating Page Heading" finished-at="2024-12-21T14:36:32 IST" duration-ms="35" status="PASS">
+        </test-method> <!-- selectProduct -->
+        <test-method signature="selectCart()[pri:3, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:05 IST" name="selectCart" description="Moving towards Cart page" finished-at="2025-01-05T17:49:09 IST" duration-ms="4286" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- headingTest -->
-        <test-method signature="passwordEyeTest()[pri:5, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:32 IST" name="passwordEyeTest" description="Validating Password Eye Button" finished-at="2024-12-21T14:36:32 IST" duration-ms="45" status="PASS">
+        </test-method> <!-- selectCart -->
+        <test-method signature="containerBoxVisibilityTest()[pri:4, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:09 IST" name="containerBoxVisibilityTest" description="Checking container box visible on cart page" finished-at="2025-01-05T17:49:12 IST" duration-ms="3094" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- passwordEyeTest -->
-        <test-method signature="forgotPassTest()[pri:6, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:32 IST" name="forgotPassTest" description="Validating Forgot Password Button" finished-at="2024-12-21T14:36:32 IST" duration-ms="32" status="PASS">
+        </test-method> <!-- containerBoxVisibilityTest -->
+        <test-method signature="toggleSwitchTest()[pri:5, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:12 IST" name="toggleSwitchTest" description="handling toggle switch" finished-at="2025-01-05T17:49:19 IST" duration-ms="6281" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgotPassTest -->
-        <test-method signature="bottomLineTest()[pri:7, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:32 IST" name="bottomLineTest" description="Validating Bottom Line Title" finished-at="2024-12-21T14:36:32 IST" duration-ms="33" status="PASS">
+        </test-method> <!-- toggleSwitchTest -->
+        <test-method signature="clickCreateOrderTest()[pri:6, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:19 IST" name="clickCreateOrderTest" description="clicking on Create quote button on cart page" finished-at="2025-01-05T17:49:24 IST" duration-ms="5379" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bottomLineTest -->
-        <test-method signature="bookaDemoTest()[pri:8, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:32 IST" name="bookaDemoTest" description="Validating Book a Demo Button" finished-at="2024-12-21T14:36:32 IST" duration-ms="35" status="PASS">
+        </test-method> <!-- clickCreateOrderTest -->
+        <test-method signature="clickChooseCustomerTest()[pri:7, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:24 IST" name="clickChooseCustomerTest" description="clicking on Choose customer button" finished-at="2025-01-05T17:49:32 IST" duration-ms="8189" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bookaDemoTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:35 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2024-12-21T14:36:43 IST" duration-ms="8514" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[demo@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- clickChooseCustomerTest -->
+        <test-method signature="customerSearchTest()[pri:8, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:32 IST" name="customerSearchTest" description="Searching customer" finished-at="2025-01-05T17:49:56 IST" duration-ms="23543" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:43 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2024-12-21T14:36:53 IST" duration-ms="10050" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[xyz@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- customerSearchTest -->
+        <test-method signature="checkContainerOnCartPageAfterSelectingCustomerTest()[pri:10, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:56 IST" name="checkContainerOnCartPageAfterSelectingCustomerTest" description="Checking toggle switch off after selecting customer" finished-at="2025-01-05T17:49:59 IST" duration-ms="3277" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:36:53 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2024-12-21T14:37:03 IST" duration-ms="9734" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- checkContainerOnCartPageAfterSelectingCustomerTest -->
+        <test-method signature="defaultCFTTest()[pri:11, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:59 IST" name="defaultCFTTest" description="Checking that by default CFT is displaying and in bottom totalCFT value is showing" finished-at="2025-01-05T17:49:59 IST" duration-ms="35" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:37:03 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2024-12-21T14:37:12 IST" duration-ms="9137" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[xyz@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[lui]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- defaultCFTTest -->
+        <test-method signature="clickCBMTest()[pri:12, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:49:59 IST" name="clickCBMTest" description="Checking that by click on CBM, in bottom totalCBM value is showing" finished-at="2025-01-05T17:50:04 IST" duration-ms="5145" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:37:12 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2024-12-21T14:37:22 IST" duration-ms="10079" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[qateam@wizcommerce.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- clickCBMTest -->
+        <test-method signature="selctCBMFromDropdownTest()[pri:13, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:50:04 IST" name="selctCBMFromDropdownTest" description="Selecting from CBM dropdown" finished-at="2025-01-05T17:50:29 IST" duration-ms="24454" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="logoutTest()[pri:10, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:37:22 IST" name="logoutTest" description="Logout" finished-at="2024-12-21T14:37:28 IST" depends-on-methods="test.Test001_Login_Logout.loginAllCasesTest" duration-ms="5103" status="PASS">
+        </test-method> <!-- selctCBMFromDropdownTest -->
+        <test-method signature="clickCFTAgainAndSelctCFTFromDropdownTest()[pri:14, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:50:29 IST" name="clickCFTAgainAndSelctCFTFromDropdownTest" description="Click on CFT again and selecting from CFT dropdown" finished-at="2025-01-05T17:50:53 IST" duration-ms="24469" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoutTest -->
-        <test-method signature="closeBrowser()[pri:11, instance:test.Test001_Login_Logout@3ce7490a]" started-at="2024-12-21T14:37:28 IST" name="closeBrowser" description="Closing browser" finished-at="2024-12-21T14:37:33 IST" duration-ms="5910" status="PASS">
+        </test-method> <!-- clickCFTAgainAndSelctCFTFromDropdownTest -->
+        <test-method signature="toggleSwitchAgainTest()[pri:15, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:50:53 IST" name="toggleSwitchAgainTest" description="handling toggle switch again" finished-at="2025-01-05T17:50:59 IST" duration-ms="6206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toggleSwitchAgainTest -->
+        <test-method signature="clickCreateOrder2ButtonTest()[pri:16, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:50:59 IST" name="clickCreateOrder2ButtonTest" description="Click on create quote" finished-at="2025-01-05T17:51:08 IST" duration-ms="8167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCreateOrder2ButtonTest -->
+        <test-method signature="clickProceedButtonTest()[pri:17, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:08 IST" name="clickProceedButtonTest" description="Click on proceed button" finished-at="2025-01-05T17:51:13 IST" duration-ms="5144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickProceedButtonTest -->
+        <test-method signature="toggleSwitchCheckTest()[pri:18, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:13 IST" name="toggleSwitchCheckTest" description="Checking container box not visible on cart page" finished-at="2025-01-05T17:51:16 IST" duration-ms="3009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toggleSwitchCheckTest -->
+        <test-method signature="clickEditButtonTest()[pri:19, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:16 IST" name="clickEditButtonTest" description="Click on edit button" finished-at="2025-01-05T17:51:21 IST" duration-ms="5148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickEditButtonTest -->
+        <test-method signature="clickAddProductsButtonTest()[pri:20, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:21 IST" name="clickAddProductsButtonTest" description="Click on Add product button" finished-at="2025-01-05T17:51:29 IST" duration-ms="8184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAddProductsButtonTest -->
+        <test-method signature="selectmoreProductTest()[pri:21, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:29 IST" name="selectmoreProductTest" description="Adding more products to cart" finished-at="2025-01-05T17:51:56 IST" duration-ms="26807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectmoreProductTest -->
+        <test-method signature="selectCartAgainTest()[pri:22, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:56 IST" name="selectCartAgainTest" description="Moving again towards Cart page" finished-at="2025-01-05T17:51:59 IST" duration-ms="3165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectCartAgainTest -->
+        <test-method signature="toggleSwitchCheckTest2()[pri:23, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:51:59 IST" name="toggleSwitchCheckTest2" description="Checking again container box not visible on cart page" finished-at="2025-01-05T17:52:02 IST" duration-ms="3009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toggleSwitchCheckTest2 -->
+        <test-method signature="clickUpdateQuoteButtonTest()[pri:24, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:52:02 IST" name="clickUpdateQuoteButtonTest" description="Click on update quote button" finished-at="2025-01-05T17:52:10 IST" duration-ms="8124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickUpdateQuoteButtonTest -->
+        <test-method signature="toggleSwitchCheckTest3()[pri:25, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:52:10 IST" name="toggleSwitchCheckTest3" description="Checking after updating quote, container box not visible on cart page" finished-at="2025-01-05T17:52:13 IST" duration-ms="3016" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toggleSwitchCheckTest3 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.Test008_Container@74bbc273]" started-at="2025-01-05T17:52:13 IST" name="closeBrowser" finished-at="2025-01-05T17:52:19 IST" duration-ms="5255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- test.Test001_Login_Logout -->
+      </class> <!-- test.Test008_Container -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -42,16 +42,16 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 	WebElement orderId;
 
 //	@FindBy(xpath = "//input[@id=\"ag-215-input\"]")
-	@FindBy(xpath = "(//input[@aria-label=\"Reference ID Filter Input\"])[1]")
+	@FindBy(xpath = "(//input[@aria-label=\"Reference ID Filter Input\"])[2]")
 	WebElement referenceIDTextbox;
 
 	@FindBy(xpath = "(//p[@class='MuiTypography-root MuiTypography-inherit css-z48z1h'])[1]")
 	WebElement draft;
 
-	@FindBy(xpath = "(//span[@class=\"MuiChip-label MuiChip-labelMedium css-9iedg7\"])[1]")
+	@FindBy(xpath = "(//span//div[contains(text(),'quote')])[1]")
 	WebElement quote;
 
-	@FindBy(xpath = "(//div[@col-id=\"system_id\"]/a/div/span)[1]")
+	@FindBy(xpath = "((//div[@aria-rowindex=\"3\"])/div/a)[2]")
 	WebElement mainID;
 
 	@FindBy(xpath = "//button[contains(text(),'Submit quote')]")
@@ -183,7 +183,6 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 		Assert.assertTrue(createQuoteBtn2.isEnabled(), "Both actual and expected are not same");
 		createQuoteBtn2.click();
 		Thread.sleep(5000);
-
 	}
 
 // Verifying customer details after quote creation
@@ -408,6 +407,8 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 // Paste order Id on referance Id textbox opens after clicking on save later button and press enter 
 	@Step("Paste order Id on referance Id textbox opens after clicking on save later button and press enter")
 	public void pasteOrderId() throws Exception {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[2]")).click();
 		Robot robot = new Robot();
 		Thread.sleep(3000);
 		Assert.assertTrue(referenceIDTextbox.isEnabled(), "Both actual and expected are not same");
