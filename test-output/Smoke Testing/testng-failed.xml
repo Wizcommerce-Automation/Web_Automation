@@ -3,31 +3,29 @@
 <suite name="Failed suite [Smoke Testing]">
   <test thread-count="5" name="Parallel Test(failed)">
     <classes>
-      <class name="test.Test009_Product_Page_With_All_Cases">
+      <class name="test.Test007_Buyer_Switching">
         <methods>
+          <include name="clickCustomer1Test"/>
           <include name="closeBrowser"/>
-          <include name="checkFilterOnVarientBoxTest"/>
-          <include name="checkVarientAvailableTest"/>
+          <include name="verifyProductOnCart2ndTime"/>
+          <include name="clickCustomer2AgainForkeepExistingTest"/>
+          <include name="selectProduct"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- test.Test009_Product_Page_With_All_Cases -->
-      <class name="test.Test008_Container">
+      </class> <!-- test.Test007_Buyer_Switching -->
+      <class name="test.Test010_Category_And_Collections_Page">
         <methods>
+          <include name="productsVisibleOnCartIconTest"/>
+          <include name="clickOnParticularCategoryTest"/>
           <include name="closeBrowser"/>
-          <include name="clickEditButtonTest"/>
-          <include name="selectCartAgainTest"/>
-          <include name="clickAddProductsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="selectmoreProductTest"/>
-          <include name="clickUpdateQuoteButtonTest"/>
+          <include name="verifySortByDropdownTest"/>
+          <include name="verifyFilterIconTest"/>
           <include name="openBrowser"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="selctCBMFromDropdownTest"/>
-          <include name="clickCFTAgainAndSelctCFTFromDropdownTest"/>
-          <include name="defaultCFTTest"/>
-          <include name="clickCBMTest"/>
+          <include name="verifyCategoryPageTest"/>
+          <include name="verifyExploreAll_AllDropdownsTest"/>
+          <include name="verifyCategoryViewAllButtonTest"/>
         </methods>
-      </class> <!-- test.Test008_Container -->
+      </class> <!-- test.Test010_Category_And_Collections_Page -->
     </classes>
   </test> <!-- Parallel Test(failed) -->
 </suite> <!-- Failed suite [Smoke Testing] -->
