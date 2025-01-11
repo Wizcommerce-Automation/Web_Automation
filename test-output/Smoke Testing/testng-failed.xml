@@ -3,29 +3,98 @@
 <suite name="Failed suite [Smoke Testing]">
   <test thread-count="5" name="Parallel Test(failed)">
     <classes>
-      <class name="test.Test007_Buyer_Switching">
+      <class name="test.Test008_Container">
         <methods>
-          <include name="clickCustomer1Test"/>
           <include name="closeBrowser"/>
-          <include name="verifyProductOnCart2ndTime"/>
-          <include name="clickCustomer2AgainForkeepExistingTest"/>
           <include name="selectProduct"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- test.Test007_Buyer_Switching -->
-      <class name="test.Test010_Category_And_Collections_Page">
+      </class> <!-- test.Test008_Container -->
+      <class name="test.Test005_Edit_Quote_02">
         <methods>
-          <include name="productsVisibleOnCartIconTest"/>
-          <include name="clickOnParticularCategoryTest"/>
+          <include name="clickSubmitOrderButtonTest"/>
+          <include name="selectProduct"/>
+          <include name="clickReSubmitQuoteButtonTest"/>
+          <include name="selectmoreProductTest"/>
           <include name="closeBrowser"/>
-          <include name="verifySortByDropdownTest"/>
-          <include name="verifyFilterIconTest"/>
+          <include name="handlingCheckbox1Test"/>
+          <include name="clickProceedButtonTest"/>
+          <include name="clickCreateOrder2ButtonTest"/>
+          <include name="clickUpdateQuoteButtonTest"/>
+          <include name="clickChooseCustomerTest"/>
+          <include name="clickEditButtonTest"/>
+          <include name="handlingCheckbox2Test"/>
+          <include name="clickSubmitQuoteTest"/>
+          <include name="clickConvertToOrderTest"/>
+          <include name="selectCartAgainTest"/>
           <include name="openBrowser"/>
-          <include name="verifyCategoryPageTest"/>
-          <include name="verifyExploreAll_AllDropdownsTest"/>
-          <include name="verifyCategoryViewAllButtonTest"/>
+          <include name="clickEditQuotebuttonTest"/>
+          <include name="clickAddProductsButtonTest"/>
+          <include name="clickCreateOrderTest"/>
+          <include name="customerSearchTest"/>
         </methods>
-      </class> <!-- test.Test010_Category_And_Collections_Page -->
+      </class> <!-- test.Test005_Edit_Quote_02 -->
+      <class name="test.Test002_Create_Order">
+        <methods>
+          <include name="verifyDeleteTest"/>
+          <include name="decreasingProductCountTest"/>
+          <include name="increasingProductCountTest"/>
+          <include name="clickChooseCustomerTest"/>
+          <include name="writeNoteTest"/>
+          <include name="verifyDiscountVisibilityOnProductTest"/>
+          <include name="deleteProductByThreedotButtonTest"/>
+          <include name="saveButtonTest"/>
+          <include name="openBrowser"/>
+          <include name="clickConfirmButtonTest"/>
+          <include name="clickCustomerSearchTextboxTest"/>
+          <include name="clickCreateOrderTest"/>
+          <include name="closeBrowser"/>
+          <include name="offeringDiscountTest"/>
+          <include name="validatingTotalProductOnCartTest"/>
+          <include name="clickSubmitOrderButtonTest"/>
+          <include name="addNoteText"/>
+          <include name="addNoteByThreedotButtonTest"/>
+          <include name="clickProceedButtonTest"/>
+          <include name="productsVisibleOnCartIconTest"/>
+          <include name="selectCart"/>
+          <include name="verifyProductOnCartAgainTest"/>
+          <include name="clickAgainOnThreeDotsButtonTest"/>
+          <include name="clickCreateOrder2ButtonTest"/>
+          <include name="minusButtonTest"/>
+          <include name="verifyingAmountTest"/>
+          <include name="selectProduct"/>
+          <include name="plusButtonTest"/>
+        </methods>
+      </class> <!-- test.Test002_Create_Order -->
+      <class name="test.Test006_Draft">
+        <methods>
+          <include name="clickConvertToOrderTest"/>
+          <include name="clickCreateOrder2ButtonTest"/>
+          <include name="getDarftTypeStatusTest"/>
+          <include name="selectProduct"/>
+          <include name="getStatusOnDraftTest"/>
+          <include name="copyOrderIdTest"/>
+          <include name="clickSubmitOrderButtonTest"/>
+          <include name="clickSubmitQuoteTest"/>
+          <include name="clickCreateOrderTest"/>
+          <include name="customerNameVerificationOnDraftTest"/>
+          <include name="openBrowser"/>
+          <include name="pasteOrderIdOnDraftsTest"/>
+          <include name="getTypeStatusTest"/>
+          <include name="handlingCheckbox1Test"/>
+          <include name="closeBrowser"/>
+          <include name="clickChooseCustomerTest"/>
+          <include name="customerNameVerificationTest"/>
+          <include name="clickProceedButtonTest"/>
+          <include name="handlingCheckbox2Test"/>
+          <include name="pasteOrderIdTest"/>
+          <include name="selectSaveForLater"/>
+          <include name="getDarftStatusTest"/>
+          <include name="customerSearchTest"/>
+          <include name="clickmainIdTest"/>
+          <include name="clickDarftTest"/>
+        </methods>
+      </class> <!-- test.Test006_Draft -->
     </classes>
   </test> <!-- Parallel Test(failed) -->
 </suite> <!-- Failed suite [Smoke Testing] -->

@@ -417,5 +417,14 @@ public class Test003_Convert_Quote_To_Order extends BaseTest {
 		pomPages.POM4_Convert_Quote_To_Order mail = new pomPages.POM4_Convert_Quote_To_Order();
 		mail.getMailIdOnOrderPage();
 	}
+	
+	@Test(priority = 44, description = "cancel order verification")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Test Description: Validating cancel order verification Test")
+	@Story("Story Name: To check cancel order verification")
+	public void orderCancelledTest() throws Exception {
+		Test002_Create_Order cancelOrder = new Test002_Create_Order();
+		cancelOrder.cancelOrderTest();
+	}
 
 }

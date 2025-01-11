@@ -60,6 +60,22 @@ public class POM3_Cart_Page extends BaseTest {
 
 	@FindBy(xpath = "//div[@class=\"MuiGrid-root MuiGrid-container css-wz0ool\"]/div/p")
 	WebElement user;
+	
+	//Three dots for cancel drop down option
+	@FindBy(xpath = "//div[@id='order-management-header-menu']")
+	WebElement threeDots;
+	
+	//Cancel button
+	@FindBy(xpath = "//span[normalize-space()='Cancel']")
+	WebElement cancelBtn;
+	
+	//Cancel order button
+	@FindBy(xpath = "//button[normalize-space()='Cancel order']")
+	WebElement cancelOrderBtn;
+	
+	// Cancel order verification
+	@FindBy(xpath = "//p[normalize-space()='Order cancelled']")
+	WebElement orderCancelled;
 
 	public POM3_Cart_Page() {
 		PageFactory.initElements(driver, this);
@@ -166,5 +182,33 @@ public class POM3_Cart_Page extends BaseTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Step("Click on Three dots")
+	public void clickThreeDots() throws Exception {
+		Actions action = new Actions(driver);
+		action.moveToElement(threeDots).click().build().perform();
+		Thread.sleep(3000);
+	}
+	
+	@Step("Click on Cancel Button")
+	public void clickCancelBtn() throws Exception {
+		Assert.assertTrue(cancelBtn.isEnabled(), "Both actual and expected are not same");
+		cancelBtn.click();
+		Thread.sleep(3000);
+	}
+	
+	@Step("Click on Cancel Order Button")
+	public void clickCancelOrderBtn() throws Exception {
+		Assert.assertTrue(cancelOrderBtn.isEnabled(), "Both actual and expected are not same");
+		cancelOrderBtn.click();
+		Thread.sleep(3000);
+	}
+	
+	@Step("Verify Order Cancelled")
+	public void verifyOrderCancelled() throws Exception {
+		Assert.assertTrue(orderCancelled.isDisplayed(), "Both actual and expected are not same");
+		Thread.sleep(3000);
+	}
+	
 
 }
