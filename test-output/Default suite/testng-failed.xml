@@ -3,43 +3,32 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Test002_Create_Order">
+      <class name="test.CreateCustomerTest">
         <methods>
-          <include name="productButtonTest"/>
-          <include name="verifyDeleteTest"/>
-          <include name="decreasingProductCountTest"/>
-          <include name="increasingProductCountTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="writeNoteTest"/>
-          <include name="clickBackArrowNextToCartTest"/>
-          <include name="verifyDiscountVisibilityOnProductTest"/>
-          <include name="deleteProductByThreedotButtonTest"/>
-          <include name="saveButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="selectCartAgain"/>
-          <include name="clickConfirmButtonTest"/>
-          <include name="clickCustomerSearchTextboxTest"/>
-          <include name="clickCreateOrderTest"/>
+          <include name="create_customer_button_click"/>
+          <include name="verify_add_details_button"/>
           <include name="closeBrowser"/>
-          <include name="offeringDiscountTest"/>
-          <include name="validatingTotalProductOnCartTest"/>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="addNoteText"/>
-          <include name="addNoteByThreedotButtonTest"/>
-          <include name="cancelOrderTest"/>
-          <include name="clickSubmitButtonTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="productsVisibleOnCartIconTest"/>
-          <include name="selectCart"/>
-          <include name="verifyProductOnCartAgainTest"/>
-          <include name="clickAgainOnThreeDotsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="minusButtonTest"/>
-          <include name="verifyingAmountTest"/>
-          <include name="selectProduct"/>
-          <include name="plusButtonTest"/>
+          <include name="Verify_addDetailsHeaders"/>
+          <include name="click_addcontactc"/>
+          <include name="select_catalog"/>
+          <include name="Emailandphoneerrortest"/>
+          <include name="click_catalog_dropdown"/>
+          <include name="create_customer_button_spelling_check"/>
+          <include name="create_customer_button_display"/>
+          <include name="verify_basic_details_spelling"/>
+          <include name="company_name"/>
+          <include name="click_save_buttontest"/>
+          <include name="emptyAllFiledsTest"/>
+          <include name="CheckHeadersClickable"/>
+          <include name="Verify_addDetailsHeadersEnabled"/>
+          <include name="openBrowser"/>
+          <include name="verify_basic_details_heading"/>
+          <include name="verify_elements_on_addcustomer"/>
+          <include name="verify_add_customer_title"/>
+          <include name="create_customer_button_enabled"/>
+          <include name="verify_Elemnts_OnPage_Test"/>
         </methods>
-      </class> <!-- test.Test002_Create_Order -->
+      </class> <!-- test.CreateCustomerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

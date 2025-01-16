@@ -1,65 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Smoke Testing]">
-  <test thread-count="5" name="Parallel Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Test007_Buyer_Switching">
+      <class name="test.CreateCustomerTest">
         <methods>
+          <include name="create_customer_button_click"/>
+          <include name="verify_add_details_button"/>
           <include name="closeBrowser"/>
-          <include name="verifyProductOnCart2ndTime"/>
+          <include name="Verify_addDetailsHeaders"/>
+          <include name="click_addcontactc"/>
+          <include name="select_catalog"/>
+          <include name="Emailandphoneerrortest"/>
+          <include name="click_catalog_dropdown"/>
+          <include name="create_customer_button_spelling_check"/>
+          <include name="create_customer_button_display"/>
+          <include name="verify_basic_details_spelling"/>
+          <include name="company_name"/>
+          <include name="click_save_buttontest"/>
+          <include name="emptyAllFiledsTest"/>
+          <include name="CheckHeadersClickable"/>
+          <include name="Verify_addDetailsHeadersEnabled"/>
           <include name="openBrowser"/>
+          <include name="verify_basic_details_heading"/>
+          <include name="verify_elements_on_addcustomer"/>
+          <include name="verify_add_customer_title"/>
+          <include name="create_customer_button_enabled"/>
+          <include name="verify_Elemnts_OnPage_Test"/>
         </methods>
-      </class> <!-- test.Test007_Buyer_Switching -->
-      <class name="test.Test009_Product_Page_With_All_Cases">
-        <methods>
-          <include name="verifyCartIconTest"/>
-          <include name="productsVisibleOnCartIconTest"/>
-          <include name="closeBrowser"/>
-          <include name="checkFilterOnVarientBoxTest"/>
-          <include name="verifyCategoryViewAllButtonTest"/>
-          <include name="checkPriceChangeAfterCustomerSwitchFollowingCatalogueSWitchTest"/>
-          <include name="verifyViewSimilarBtnTest"/>
-          <include name="checkVarientAvailableTest"/>
-          <include name="openBrowser"/>
-          <include name="verifyCategoryRailProductsTest"/>
-        </methods>
-      </class> <!-- test.Test009_Product_Page_With_All_Cases -->
-      <class name="test.Test004_Edit_Quote_01">
-        <methods>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="clickAddDiscountButtonTest"/>
-          <include name="clickConvertToOrderTest"/>
-          <include name="clickCreateOrderTest"/>
-          <include name="clickTaxApplyButtonTest"/>
-          <include name="clickSubmitQuoteTest"/>
-          <include name="enterDiscountTest"/>
-          <include name="verifyAmountAfterTaxTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="clickShippingApplyButtonTest"/>
-          <include name="clickAddAdditionalChargeButtonTest"/>
-          <include name="clickAddTaxButtonTest"/>
-          <include name="clickApplyAdditionalChargeButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="verifyAmountAfterAddChargeTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="clickReSubmitQuoteButtonTest"/>
-          <include name="closeBrowser"/>
-          <include name="enterShippingChargeTest"/>
-          <include name="enterAdditionalchargeTest"/>
-          <include name="verifyPageAmountTest"/>
-          <include name="clickEditQuotebuttonTest"/>
-          <include name="clickApplyButtonTest"/>
-          <include name="orderCancelledTest"/>
-          <include name="verifyAmountAfterDiscountTest"/>
-          <include name="handlingCheckbox2Test"/>
-          <include name="customerSearchTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="verifyAmountAfterShipping"/>
-          <include name="clickAddShippingChargeButtonTest"/>
-          <include name="enterTaxTest"/>
-          <include name="handlingCheckbox1Test"/>
-        </methods>
-      </class> <!-- test.Test004_Edit_Quote_01 -->
+      </class> <!-- test.CreateCustomerTest -->
     </classes>
-  </test> <!-- Parallel Test(failed) -->
-</suite> <!-- Failed suite [Smoke Testing] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
