@@ -3,63 +3,12 @@
 <suite name="Failed suite [Smoke Testing]">
   <test thread-count="5" name="Parallel Test(failed)">
     <classes>
-      <class name="test.Test007_Buyer_Switching">
+      <class name="test.Test001_Login_Logout">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="verifyProductOnCart2ndTime"/>
-          <include name="openBrowser"/>
+          <include name="loginAllCasesTest"/>
+          <include name="logoutTest"/>
         </methods>
-      </class> <!-- test.Test007_Buyer_Switching -->
-      <class name="test.Test009_Product_Page_With_All_Cases">
-        <methods>
-          <include name="verifyCartIconTest"/>
-          <include name="productsVisibleOnCartIconTest"/>
-          <include name="closeBrowser"/>
-          <include name="checkFilterOnVarientBoxTest"/>
-          <include name="verifyCategoryViewAllButtonTest"/>
-          <include name="checkPriceChangeAfterCustomerSwitchFollowingCatalogueSWitchTest"/>
-          <include name="verifyViewSimilarBtnTest"/>
-          <include name="checkVarientAvailableTest"/>
-          <include name="openBrowser"/>
-          <include name="verifyCategoryRailProductsTest"/>
-        </methods>
-      </class> <!-- test.Test009_Product_Page_With_All_Cases -->
-      <class name="test.Test004_Edit_Quote_01">
-        <methods>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="clickAddDiscountButtonTest"/>
-          <include name="clickConvertToOrderTest"/>
-          <include name="clickCreateOrderTest"/>
-          <include name="clickTaxApplyButtonTest"/>
-          <include name="clickSubmitQuoteTest"/>
-          <include name="enterDiscountTest"/>
-          <include name="verifyAmountAfterTaxTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="clickShippingApplyButtonTest"/>
-          <include name="clickAddAdditionalChargeButtonTest"/>
-          <include name="clickAddTaxButtonTest"/>
-          <include name="clickApplyAdditionalChargeButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="verifyAmountAfterAddChargeTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="clickReSubmitQuoteButtonTest"/>
-          <include name="closeBrowser"/>
-          <include name="enterShippingChargeTest"/>
-          <include name="enterAdditionalchargeTest"/>
-          <include name="verifyPageAmountTest"/>
-          <include name="clickEditQuotebuttonTest"/>
-          <include name="clickApplyButtonTest"/>
-          <include name="orderCancelledTest"/>
-          <include name="verifyAmountAfterDiscountTest"/>
-          <include name="handlingCheckbox2Test"/>
-          <include name="customerSearchTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="verifyAmountAfterShipping"/>
-          <include name="clickAddShippingChargeButtonTest"/>
-          <include name="enterTaxTest"/>
-          <include name="handlingCheckbox1Test"/>
-        </methods>
-      </class> <!-- test.Test004_Edit_Quote_01 -->
+      </class> <!-- test.Test001_Login_Logout -->
     </classes>
   </test> <!-- Parallel Test(failed) -->
 </suite> <!-- Failed suite [Smoke Testing] -->
