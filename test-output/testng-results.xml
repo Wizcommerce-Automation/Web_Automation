@@ -1,105 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="21" passed="21" failed="0" skipped="0">
+<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-11T09:48:11 IST" name="Default suite" finished-at="2025-01-11T09:51:23 IST" duration-ms="191634">
+  <suite started-at="2025-01-13T11:17:50 IST" name="Default suite" finished-at="2025-01-13T11:21:06 IST" duration-ms="196693">
     <groups>
     </groups>
-    <test started-at="2025-01-11T09:48:11 IST" name="Default test" finished-at="2025-01-11T09:51:23 IST" duration-ms="191634">
-      <class name="test.Test005_Edit_Quote_02">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:12 IST" name="openBrowser" finished-at="2025-01-11T09:48:21 IST" duration-ms="9590" status="PASS">
+    <test started-at="2025-01-13T11:17:50 IST" name="Default test" finished-at="2025-01-13T11:21:06 IST" duration-ms="196693">
+      <class name="test.Test007_Buyer_Switching">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:17:50 IST" name="openBrowser" finished-at="2025-01-13T11:17:57 IST" duration-ms="7559" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="productButtonTest()[pri:1, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:21 IST" name="productButtonTest" description="Click on product button" finished-at="2025-01-11T09:48:23 IST" duration-ms="2038" status="PASS">
+        <test-method signature="productButtonTest()[pri:1, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:17:57 IST" name="productButtonTest" description="Click on product button" finished-at="2025-01-13T11:17:59 IST" duration-ms="1845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productButtonTest -->
-        <test-method signature="selectProduct()[pri:2, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:23 IST" name="selectProduct" description="Adding products to cart" finished-at="2025-01-11T09:48:36 IST" duration-ms="12374" status="PASS">
+        <test-method signature="selectProduct()[pri:2, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:17:59 IST" name="selectProduct" description="Adding products to cart" finished-at="2025-01-13T11:18:11 IST" duration-ms="11908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectProduct -->
-        <test-method signature="selectCart()[pri:3, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:36 IST" name="selectCart" description="Moving towards Cart page" finished-at="2025-01-11T09:48:40 IST" duration-ms="4193" status="PASS">
+        <test-method signature="clickGuestCustomerButton1sttimeTest()[pri:3, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:11 IST" name="clickGuestCustomerButton1sttimeTest" description="Click on Guest Customer button" finished-at="2025-01-13T11:18:17 IST" duration-ms="5266" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectCart -->
-        <test-method signature="clickCreateOrderTest()[pri:4, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:40 IST" name="clickCreateOrderTest" description="clicking on Create quote button on cart page" finished-at="2025-01-11T09:48:45 IST" duration-ms="5243" status="PASS">
+        </test-method> <!-- clickGuestCustomerButton1sttimeTest -->
+        <test-method signature="clickCustomerSearchTextbox1stTimeTest()[pri:4, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:17 IST" name="clickCustomerSearchTextbox1stTimeTest" description="Searching customer" finished-at="2025-01-13T11:18:22 IST" duration-ms="5188" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickCreateOrderTest -->
-        <test-method signature="clickChooseCustomerTest()[pri:5, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:45 IST" name="clickChooseCustomerTest" description="clicking on Choose customer button" finished-at="2025-01-11T09:48:53 IST" duration-ms="8267" status="PASS">
+        </test-method> <!-- clickCustomerSearchTextbox1stTimeTest -->
+        <test-method signature="clickCustomer1Test()[pri:5, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:22 IST" name="clickCustomer1Test" description="Click on selected customer and selecting new cart from popup" finished-at="2025-01-13T11:18:33 IST" duration-ms="11181" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickChooseCustomerTest -->
-        <test-method signature="customerSearchTest()[pri:6, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:48:53 IST" name="customerSearchTest" description="Searching customer" finished-at="2025-01-11T09:49:09 IST" duration-ms="15357" status="PASS">
+        </test-method> <!-- clickCustomer1Test -->
+        <test-method signature="clickCartButton1stTimeTest()[pri:6, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:33 IST" name="clickCartButton1stTimeTest" description="Moving towards Cart page" finished-at="2025-01-13T11:18:43 IST" duration-ms="10218" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerSearchTest -->
-        <test-method signature="clickCreateOrder2ButtonTest()[pri:7, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:09 IST" name="clickCreateOrder2ButtonTest" description="Click on create quote" finished-at="2025-01-11T09:49:17 IST" duration-ms="8167" status="PASS">
+        </test-method> <!-- clickCartButton1stTimeTest -->
+        <test-method signature="verifyEmptyCart1stTimeTest()[pri:7, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:43 IST" name="verifyEmptyCart1stTimeTest" description="verify cart is empty after choosing new cart" finished-at="2025-01-13T11:18:46 IST" duration-ms="3262" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickCreateOrder2ButtonTest -->
-        <test-method signature="clickProceedButtonTest()[pri:8, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:17 IST" name="clickProceedButtonTest" description="Click on proceed button" finished-at="2025-01-11T09:49:22 IST" duration-ms="5179" status="PASS">
+        </test-method> <!-- verifyEmptyCart1stTimeTest -->
+        <test-method signature="verifyCustomerNameOnCartPage1stTimeTest()[pri:8, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:46 IST" name="verifyCustomerNameOnCartPage1stTimeTest" description="verify customer name on cart page" finished-at="2025-01-13T11:18:52 IST" duration-ms="5094" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickProceedButtonTest -->
-        <test-method signature="clickSubmitQuoteTest()[pri:9, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:22 IST" name="clickSubmitQuoteTest" description="Click on submit quote button" finished-at="2025-01-11T09:49:28 IST" duration-ms="5278" status="PASS">
+        </test-method> <!-- verifyCustomerNameOnCartPage1stTimeTest -->
+        <test-method signature="selectProduct2ndTimeTest()[pri:9, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:18:52 IST" name="selectProduct2ndTimeTest" description="Adding products to cart again" finished-at="2025-01-13T11:19:02 IST" duration-ms="10757" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickSubmitQuoteTest -->
-        <test-method signature="clickEditQuotebuttonTest()[pri:10, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:28 IST" name="clickEditQuotebuttonTest" description="Click on edit quote button" finished-at="2025-01-11T09:49:38 IST" duration-ms="10182" status="PASS">
+        </test-method> <!-- selectProduct2ndTimeTest -->
+        <test-method signature="clickGuestCustomerButton2ndTimeTest()[pri:10, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:02 IST" name="clickGuestCustomerButton2ndTimeTest" description="Click on Guest Customer button again for assign cart" finished-at="2025-01-13T11:19:08 IST" duration-ms="5198" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickEditQuotebuttonTest -->
-        <test-method signature="clickEditButtonTest()[pri:11, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:38 IST" name="clickEditButtonTest" description="Click on edit button" finished-at="2025-01-11T09:49:43 IST" duration-ms="5135" status="PASS">
+        </test-method> <!-- clickGuestCustomerButton2ndTimeTest -->
+        <test-method signature="clickCustomerSearchTextbox2ndTimeTest()[pri:11, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:08 IST" name="clickCustomerSearchTextbox2ndTimeTest" description="Searching customer again for assign cart" finished-at="2025-01-13T11:19:18 IST" duration-ms="10238" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickEditButtonTest -->
-        <test-method signature="clickAddProductsButtonTest()[pri:12, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:43 IST" name="clickAddProductsButtonTest" description="Click on Add product button" finished-at="2025-01-11T09:49:51 IST" duration-ms="8205" status="PASS">
+        </test-method> <!-- clickCustomerSearchTextbox2ndTimeTest -->
+        <test-method signature="clickCustomer2Test()[pri:12, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:18 IST" name="clickCustomer2Test" description="Select customer and selecting assign cart " finished-at="2025-01-13T11:19:28 IST" duration-ms="10463" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickAddProductsButtonTest -->
-        <test-method signature="selectmoreProductTest()[pri:13, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:49:51 IST" name="selectmoreProductTest" description="Adding more products to cart" finished-at="2025-01-11T09:50:18 IST" duration-ms="26815" status="PASS">
+        </test-method> <!-- clickCustomer2Test -->
+        <test-method signature="clickCartButton2ndTime()[pri:13, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:28 IST" name="clickCartButton2ndTime" description="Moving towards Cart page again" finished-at="2025-01-13T11:19:39 IST" duration-ms="10240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectmoreProductTest -->
-        <test-method signature="selectCartAgainTest()[pri:14, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:18 IST" name="selectCartAgainTest" description="Moving again towards Cart page" finished-at="2025-01-11T09:50:21 IST" duration-ms="3155" status="PASS">
+        </test-method> <!-- clickCartButton2ndTime -->
+        <test-method signature="verifyCustomerNameOnCartPage2ndTimeTest()[pri:14, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:39 IST" name="verifyCustomerNameOnCartPage2ndTimeTest" description="verify customer name on cart page again" finished-at="2025-01-13T11:19:44 IST" duration-ms="5151" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectCartAgainTest -->
-        <test-method signature="clickUpdateQuoteButtonTest()[pri:15, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:21 IST" name="clickUpdateQuoteButtonTest" description="Click on update quote button" finished-at="2025-01-11T09:50:29 IST" duration-ms="8121" status="PASS">
+        </test-method> <!-- verifyCustomerNameOnCartPage2ndTimeTest -->
+        <test-method signature="verifyProductOnCart1stTimeTest()[pri:15, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:44 IST" name="verifyProductOnCart1stTimeTest" description="Count total products on cart after buyer switching" finished-at="2025-01-13T11:19:50 IST" duration-ms="6069" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickUpdateQuoteButtonTest -->
-        <test-method signature="clickReSubmitQuoteButtonTest()[pri:16, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:29 IST" name="clickReSubmitQuoteButtonTest" description="Click on re-submit quote button" finished-at="2025-01-11T09:50:36 IST" duration-ms="6368" status="PASS">
+        </test-method> <!-- verifyProductOnCart1stTimeTest -->
+        <test-method signature="clickOnCustomerButton3rdTime()[pri:16, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:19:50 IST" name="clickOnCustomerButton3rdTime" description="Click on Customer button again to check no popup came" finished-at="2025-01-13T11:20:01 IST" duration-ms="11444" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickReSubmitQuoteButtonTest -->
-        <test-method signature="clickConvertToOrderTest()[pri:17, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:36 IST" name="clickConvertToOrderTest" description="Click on convert to order" finished-at="2025-01-11T09:50:39 IST" duration-ms="3171" status="PASS">
+        </test-method> <!-- clickOnCustomerButton3rdTime -->
+        <test-method signature="verifyProductOnCart2ndTime()[pri:17, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:01 IST" name="verifyProductOnCart2ndTime" description="Count total products on cart after selecting guest customer" finished-at="2025-01-13T11:20:07 IST" duration-ms="6086" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickConvertToOrderTest -->
-        <test-method signature="handlingCheckbox1Test()[pri:18, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:39 IST" name="handlingCheckbox1Test" description="Handling check box 1" finished-at="2025-01-11T09:50:50 IST" duration-ms="11202" status="PASS">
+        </test-method> <!-- verifyProductOnCart2ndTime -->
+        <test-method signature="clickGuestCustomerButton3rdTimeforReplaceTest()[pri:18, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:07 IST" name="clickGuestCustomerButton3rdTimeforReplaceTest" description="Click on Guest Customer button again to check product added prior" finished-at="2025-01-13T11:20:13 IST" duration-ms="5221" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- handlingCheckbox1Test -->
-        <test-method signature="clickSubmitOrderButtonTest()[pri:19, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:50 IST" name="clickSubmitOrderButtonTest" description="Click on submit order" finished-at="2025-01-11T09:50:55 IST" duration-ms="5135" status="PASS">
+        </test-method> <!-- clickGuestCustomerButton3rdTimeforReplaceTest -->
+        <test-method signature="clickCustomerSearchTextbox3rdTime()[pri:19, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:13 IST" name="clickCustomerSearchTextbox3rdTime" description="Searching customer again in which products were added previously" finished-at="2025-01-13T11:20:18 IST" duration-ms="5231" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickSubmitOrderButtonTest -->
-        <test-method signature="handlingCheckbox2Test()[pri:20, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:50:55 IST" name="handlingCheckbox2Test" description="Handling check box 2" finished-at="2025-01-11T09:51:05 IST" duration-ms="10174" status="PASS">
+        </test-method> <!-- clickCustomerSearchTextbox3rdTime -->
+        <test-method signature="clickCustomer2AgainForkeepExistingTest()[pri:20, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:18 IST" name="clickCustomer2AgainForkeepExistingTest" description="Select customer and selecting keep existing from popup as product existed in the customer cart" finished-at="2025-01-13T11:20:28 IST" duration-ms="10483" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- handlingCheckbox2Test -->
-        <test-method signature="orderCancelledTest()[pri:21, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:51:05 IST" name="orderCancelledTest" description="cancel order verification" finished-at="2025-01-11T09:51:18 IST" duration-ms="12579" status="PASS">
+        </test-method> <!-- clickCustomer2AgainForkeepExistingTest -->
+        <test-method signature="verifyProductOnCart3rdTimeTest()[pri:21, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:28 IST" name="verifyProductOnCart3rdTimeTest" description="Count total products on cart after buyer switching after selecting keep existing from popup" finished-at="2025-01-13T11:20:34 IST" duration-ms="6061" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- orderCancelledTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.Test005_Edit_Quote_02@70485aa]" started-at="2025-01-11T09:51:18 IST" name="closeBrowser" finished-at="2025-01-11T09:51:23 IST" duration-ms="5273" status="PASS">
+        </test-method> <!-- verifyProductOnCart3rdTimeTest -->
+        <test-method signature="clickGuestCustomerButton4thTime()[pri:22, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:34 IST" name="clickGuestCustomerButton4thTime" description="Click on Guest Customer button again to check product added prior" finished-at="2025-01-13T11:20:39 IST" duration-ms="5151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickGuestCustomerButton4thTime -->
+        <test-method signature="clickCustomerSearchTextbox4thTime()[pri:23, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:40 IST" name="clickCustomerSearchTextbox4thTime" description="Searching customer again in which products were added previously" finished-at="2025-01-13T11:20:45 IST" duration-ms="5135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCustomerSearchTextbox4thTime -->
+        <test-method signature="clickCustomerSearchTextbox4theTime()[pri:24, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:45 IST" name="clickCustomerSearchTextbox4theTime" description="Select customer and selecting replace from popup as product existed in the customer cart" finished-at="2025-01-13T11:20:55 IST" duration-ms="10335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCustomerSearchTextbox4theTime -->
+        <test-method signature="clickCustomer4ForReplaceTest()[pri:25, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:20:55 IST" name="clickCustomer4ForReplaceTest" description="Count total products on cart after buyer switching after selecting replace from popup" finished-at="2025-01-13T11:21:01 IST" duration-ms="6100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCustomer4ForReplaceTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.Test007_Buyer_Switching@26865b57]" started-at="2025-01-13T11:21:01 IST" name="closeBrowser" finished-at="2025-01-13T11:21:06 IST" duration-ms="5301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- test.Test005_Edit_Quote_02 -->
+      </class> <!-- test.Test007_Buyer_Switching -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
