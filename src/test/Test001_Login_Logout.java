@@ -14,11 +14,14 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.google.common.io.Files;
@@ -40,40 +43,23 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 
 	@Epic("Sign In flow")
 	@Feature("Login form")
-
+	@Parameters("browserName")
 	@Test(priority = 1, description = "Launching browser and open URL")
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Test Description: Verifying launching the browser and opening the URL")
 	@Story("Story Name: To check Browser launched and URL opens")
-	public void openBrowser() throws Exception {
-
+	public void openBrowser(String browserName) throws Exception {
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
-
-		if (osname.toLowerCase().contains("linux")) {
-			// System.setProperty("webdriver.chrome.driver",
-			// "C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver");
-		} else if (osname.toLowerCase().contains("windows 11")) {
-			String filepathtoset = System.getProperty("user.dir") + "/driver/chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", filepathtoset);
-		} else {
-			System.setProperty("webdriver.chrome.driver", "/Users/user/automation-testing/chromedriver");
+		if (browserName.equalsIgnoreCase("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browserName.toString().equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if(browserName.toString().equalsIgnoreCase("edge")){
+			driver = new EdgeDriver();
+		}else {
+			driver = new ChromeDriver();
 		}
-		driver = new ChromeDriver();
-//		if (Libraries.fetchPropertyValue("browserName").toString().equalsIgnoreCase("chrome")) {
-//			System.setProperty("webdriver.chrome.driver",
-//					"C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver.exe");
-//			driver = new ChromeDriver();
-////		} else if (Libraries.fetchPropertyValue("browserName").toString().equalsIgnoreCase("firefox")) {
-////			System.setProperty("webdriver.gecko.driver",
-////					"C:\\\\Users\\\\DELL\\\\eclipse-workspace\\\\WizCommerce\\\\driver\\\\chromedriver.exe");
-////			driver = new FirefoxDriver();
-//		} else {
-//			System.setProperty("webdriver.chrome.driver",
-//					"C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver.exe");
-//			driver = new ChromeDriver();
-
-		// }
 		System.out.println("Browser launched");
 		driver.get(Libraries.fetchPropertyValue("TestURL").toString());
 		//driver.get(Libraries.fetchPropertyValue("ProdURL").toString());

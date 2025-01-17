@@ -320,5 +320,17 @@ public class Test002_Create_Order extends BaseTest {
 		pomPages.POM3_Cart_Page submit = new pomPages.POM3_Cart_Page();
 		submit.clickSubmitButton();
 	}
+	
+	@Test(priority = 31, description = "Cancel order")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Test Description: Validating cancel order Test")
+	@Story("Story Name: To check cancel order")
+	public void cancelOrderTest() throws Exception {
+		pomPages.POM3_Cart_Page cancel = new pomPages.POM3_Cart_Page();
+        cancel.clickThreeDots();
+        cancel.clickCancelBtn();
+        cancel.clickCancelOrderBtn();
+        cancel.verifyOrderCancelled();
+	}
 
 }

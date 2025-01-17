@@ -211,5 +211,14 @@ public class Test005_Edit_Quote_02 extends BaseTest {
 		pomPages.POM4_Convert_Quote_To_Order box = new pomPages.POM4_Convert_Quote_To_Order();
 		box.handlingCheckbox2();
 	}
+	
+	@Test(priority = 21, description = "cancel order verification")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Test Description: Validating cancel order verification Test")
+	@Story("Story Name: To check cancel order verification")
+	public void orderCancelledTest() throws Exception {
+		Test002_Create_Order cancelOrder = new Test002_Create_Order();
+		cancelOrder.cancelOrderTest();
+	}
 
 }
