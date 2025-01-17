@@ -16,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.AfterClass;
@@ -26,6 +27,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.google.common.io.Files;
@@ -36,41 +38,24 @@ public class BaseTest extends Libraries {
 
 	public static WebDriver driver;
 
+	@Parameters("browserName")
 	@BeforeClass
 	@Step("Open Browser")
-	public void openBrowser() throws Exception {
+	public void openBrowser(String browserName) throws Exception {
 
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
-
-		if (osname.toLowerCase().contains("linux")) {
-			// System.setProperty("webdriver.chrome.driver",
-			// "C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver");
-		} else if (osname.toLowerCase().contains("windows 11")) {
-			String filepathtoset = System.getProperty("user.dir") + "/driver/chromedriver.exe";
-			
-			System.setProperty("webdriver.chrome.driver", filepathtoset);
-		} else {
-			System.setProperty("webdriver.chrome.driver", "/Users/user/automation-testing/chromedriver");
+		if (browserName.equalsIgnoreCase("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browserName.toString().equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if(browserName.toString().equalsIgnoreCase("edge")){
+			driver = new EdgeDriver();
+		}else {
+			driver = new ChromeDriver();
 		}
-		driver = new ChromeDriver();
-//		if (Libraries.fetchPropertyValue("browserName").toString().equalsIgnoreCase("chrome")) {
-//			System.setProperty("webdriver.chrome.driver",
-//					"C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver.exe");
-//			driver = new ChromeDriver();
-////		} else if (Libraries.fetchPropertyValue("browserName").toString().equalsIgnoreCase("firefox")) {
-////			System.setProperty("webdriver.gecko.driver",
-////					"C:\\\\Users\\\\DELL\\\\eclipse-workspace\\\\WizCommerce\\\\driver\\\\chromedriver.exe");
-////			driver = new FirefoxDriver();
-//		} else {
-//			System.setProperty("webdriver.chrome.driver",
-//					"C:\\Users\\DELL\\eclipse-workspace\\WizCommerce\\driver\\chromedriver.exe");
-//			driver = new ChromeDriver();
-
-		// }
 		System.out.println("Browser launched");
 		driver.get(Libraries.fetchPropertyValue("TestURL").toString());
-		//driver.get(Libraries.fetchPropertyValue("ProdURL").toString());
 		System.out.println("URL launched");
 		driver.manage().window().maximize();
 		System.out.println("browser maximized sucessfully");
@@ -93,14 +78,6 @@ public class BaseTest extends Libraries {
 		emailId.sendKeys(uname);
 		WebElement passcode = driver.findElement(By.xpath("//input[@id='login_password']"));
 		passcode.sendKeys(pass);
-
-	   // emailId.sendKeys("qateam@wizcommerce.com");
-//	    emailId.sendKeys("admin@kcbakery.com");
-	    
-	    
-	    WebElement passcode1 = driver.findElement(By.xpath("//input[@id='login_password']"));
-//	    passcode1.sendKeys("admin");
-	   //passcode.sendKeys("admin123");
 	   
 
 		WebElement loginBtn = driver.findElement(By.xpath("//button[@id='login_submit']"));
