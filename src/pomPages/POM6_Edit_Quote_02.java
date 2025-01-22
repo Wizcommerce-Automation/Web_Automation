@@ -67,7 +67,7 @@ public class POM6_Edit_Quote_02 extends BaseTest {
 	WebElement submitButtonPopup;
 	
 	public POM6_Edit_Quote_02() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Click on submit quote button

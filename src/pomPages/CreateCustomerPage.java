@@ -6,13 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
@@ -28,9 +26,9 @@ public class CreateCustomerPage extends BaseTest {
 
 	Logger logger;
 	
-	//public static WebDriver driver;
+	//public static Webdriver.get() driver.get();
 	
-	//WebDriverWait wait = new WebDriverWait(driver, 10);
+	//Webdriver.get()Wait wait = new Webdriver.get()Wait(driver.get(), 10);
 	
 	     //user name on login page 
 		@FindBy(xpath = "(//input[@id=\"outlined-basic\"])[1]")
@@ -258,12 +256,12 @@ public class CreateCustomerPage extends BaseTest {
 				
 	
 	public CreateCustomerPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 	
 	@Step("Get Login Page Title")
 	public static String validateLoginPageTitle() {
-		String pageTitle = driver.getTitle();
+		String pageTitle = driver.get().getTitle();
 		return pageTitle;
 	}
 	
@@ -553,16 +551,16 @@ public class CreateCustomerPage extends BaseTest {
 		  submit_button.click();
 		  
 		  
-		 // driver.findElement(By.xpath(""));
+		 // driver.get().findElement(By.xpath(""));
 		  
-		  WebElement exp = driver.findElement(By.xpath("(//p[@class=\"MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained css-54guny\"])[1]"));
+		  WebElement exp = driver.get().findElement(By.xpath("(//p[@class=\"MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained css-54guny\"])[1]"));
 	        String actualNameErrorMsg = exp.getText();
 	        		
 	        Assert.assertEquals(actualNameErrorMsg, expectedNameErrorMsg);
 	        
 	        
 	        Thread.sleep(10000);
-	        WebElement emailexp = driver.findElement(By.xpath("(//p[@class=\"MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained css-54guny\"])[2]"));
+	        WebElement emailexp = driver.get().findElement(By.xpath("(//p[@class=\"MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained css-54guny\"])[2]"));
 	        String actualEmailErrorMsg = emailexp.getText();
 	        		
 	        Assert.assertEquals(actualEmailErrorMsg, expectedEmailErrorMsg);
@@ -584,7 +582,7 @@ public class CreateCustomerPage extends BaseTest {
 		  Phone_number_textfiled.sendKeys("9");
 		  
 		  Thread.sleep(2000);
-		  WebElement exp = driver.findElement(By.xpath("(//*[contains(text(),'Invalid number')])[1]"));
+		  WebElement exp = driver.get().findElement(By.xpath("(//*[contains(text(),'Invalid number')])[1]"));
 	        String actualpphoneErrorMsg = exp.getText();
 	        
 	        System.out.println(actualpphoneErrorMsg);
@@ -597,7 +595,7 @@ public class CreateCustomerPage extends BaseTest {
 		  submit_button.click();
 		//div[@class="MuiGrid-root css-1ofvkra"]/p
 		  
-		 // driver.findElement(By.xpath(""));
+		 // driver.get().findElement(By.xpath(""));
 		  
 		  
 	        		
@@ -605,7 +603,7 @@ public class CreateCustomerPage extends BaseTest {
 	        
 	        
 	        Thread.sleep(1000);
-        WebElement emailexp = driver.findElement(By.xpath("//*[contains(text(),'Email ID is required')]"));
+        WebElement emailexp = driver.get().findElement(By.xpath("//*[contains(text(),'Email ID is required')]"));
 	        String actualEmailErrorMsg = emailexp.getText();
 	        System.out.println(actualEmailErrorMsg);
 	        
@@ -614,7 +612,7 @@ public class CreateCustomerPage extends BaseTest {
 	        
 	        //wrong email id verification
 	        email_textfiled.sendKeys("mdshadwizcommerce.co");
-	        WebElement wrong_emailexp = driver.findElement(By.xpath("//*[contains(text(),'Email must be a valid address')]"));
+	        WebElement wrong_emailexp = driver.get().findElement(By.xpath("//*[contains(text(),'Email must be a valid address')]"));
 	        String actualwrongEmailErrorMsg = wrong_emailexp.getText();
 	        System.out.println(actualwrongEmailErrorMsg);
 	        
@@ -697,10 +695,10 @@ public class CreateCustomerPage extends BaseTest {
 		Thread.sleep(2000);
 		
 		// scroll 
-		Actions action = new Actions(driver);
-		WebElement list = driver.findElement(By.xpath("//*[contains (text(), 'Add contact')]")); 
+		Actions action = new Actions(driver.get());
+		WebElement list = driver.get().findElement(By.xpath("//*[contains (text(), 'Add contact')]")); 
 		action.moveToElement(list);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver.get();
 		Thread.sleep(1000);
 	
 		

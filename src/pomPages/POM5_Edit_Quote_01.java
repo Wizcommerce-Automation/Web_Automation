@@ -158,7 +158,7 @@ public class POM5_Edit_Quote_01 extends BaseTest {
 	WebElement ReSubmitPopup;
 
 	public POM5_Edit_Quote_01() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Click on three dots button to delete entire cart 
@@ -436,7 +436,7 @@ public class POM5_Edit_Quote_01 extends BaseTest {
 		robot.keyPress(KeyEvent.VK_DELETE);
 		robot.keyRelease(KeyEvent.VK_DELETE);
 		Thread.sleep(3000);
-		Actions a = new Actions(driver);
+		Actions a = new Actions(driver.get());
 //		additionalChargeNameTextbox.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
 		a.moveToElement(additionalChargeTextbox).click().sendKeys("Testing").build().perform();
 

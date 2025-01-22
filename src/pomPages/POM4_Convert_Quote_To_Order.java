@@ -164,7 +164,7 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 	WebElement user;
 
 	public POM4_Convert_Quote_To_Order() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Click on create quote button in the cart page
@@ -379,7 +379,7 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 	@Step("Copy order Id  from Quote page")
 	public void copyOrderId() throws Exception {
 		Thread.sleep(5000);
-		Actions a = new Actions(driver);
+		Actions a = new Actions(driver.get());
 		Assert.assertTrue(orderId.isEnabled(), "Both actual and expected are not same");
 		a.moveToElement(orderId).doubleClick().build().perform();
 		Thread.sleep(4000);
@@ -408,7 +408,7 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 	@Step("Paste order Id on referance Id textbox opens after clicking on save later button and press enter")
 	public void pasteOrderId() throws Exception {
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[2]")).click();
+		driver.get().findElement(By.xpath("//button[2]")).click();
 		Robot robot = new Robot();
 		Thread.sleep(3000);
 		Assert.assertTrue(referenceIDTextbox.isEnabled(), "Both actual and expected are not same");

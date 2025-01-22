@@ -189,7 +189,7 @@ public class CartSummaryPage extends BaseTest {
 //	List<WebElement> addToCart;
 	
 	public CartSummaryPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 	
 	//Check Path is displayed or not

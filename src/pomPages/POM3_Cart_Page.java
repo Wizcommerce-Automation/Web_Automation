@@ -78,7 +78,7 @@ public class POM3_Cart_Page extends BaseTest {
 	WebElement orderCancelled;
 
 	public POM3_Cart_Page() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Click on create order button in the cart page
@@ -153,7 +153,7 @@ public class POM3_Cart_Page extends BaseTest {
 // Click on the proceed button appears in checkbox
 	@Step("Click on Proceed Button")
 	public void clickProceedButton() throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+		WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(4));
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[starts-with(text(),\"Proceed\")]")));
 		Assert.assertTrue(proceedBtn.isEnabled(), "Both actual and expected are not same");
@@ -185,7 +185,7 @@ public class POM3_Cart_Page extends BaseTest {
 	
 	@Step("Click on Three dots")
 	public void clickThreeDots() throws Exception {
-		Actions action = new Actions(driver);
+		Actions action = new Actions(driver.get());
 		action.moveToElement(threeDots).click().build().perform();
 		Thread.sleep(3000);
 	}

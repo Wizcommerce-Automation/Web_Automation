@@ -4,115 +4,12 @@
   <test thread-count="5" name="TestOnChrome(failed)">
     <parameter name="browserName" value="chrome"/>
     <classes>
-      <class name="test.Test002_Create_Order">
+      <class name="test.Test001_Login_Logout">
         <methods>
-          <include name="productButtonTest"/>
-          <include name="verifyDeleteTest"/>
-          <include name="decreasingProductCountTest"/>
-          <include name="increasingProductCountTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="writeNoteTest"/>
-          <include name="clickBackArrowNextToCartTest"/>
-          <include name="verifyDiscountVisibilityOnProductTest"/>
-          <include name="deleteProductByThreedotButtonTest"/>
-          <include name="saveButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="selectCartAgain"/>
-          <include name="clickConfirmButtonTest"/>
-          <include name="clickCustomerSearchTextboxTest"/>
-          <include name="clickCreateOrderTest"/>
-          <include name="closeBrowser"/>
-          <include name="offeringDiscountTest"/>
-          <include name="validatingTotalProductOnCartTest"/>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="addNoteText"/>
-          <include name="addNoteByThreedotButtonTest"/>
-          <include name="cancelOrderTest"/>
-          <include name="clickSubmitButtonTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="productsVisibleOnCartIconTest"/>
-          <include name="selectCart"/>
-          <include name="verifyProductOnCartAgainTest"/>
-          <include name="clickAgainOnThreeDotsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="minusButtonTest"/>
-          <include name="verifyingAmountTest"/>
-          <include name="selectProduct"/>
-          <include name="plusButtonTest"/>
+          <include name="loginAllCasesTest"/>
+          <include name="logoutTest"/>
         </methods>
-      </class> <!-- test.Test002_Create_Order -->
+      </class> <!-- test.Test001_Login_Logout -->
     </classes>
   </test> <!-- TestOnChrome(failed) -->
-  <test thread-count="5" name="TestOnFireFox(failed)">
-    <parameter name="browserName" value="firefox"/>
-    <classes>
-      <class name="test.Test002_Create_Order">
-        <methods>
-          <include name="increasingProductCountTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="writeNoteTest"/>
-          <include name="clickBackArrowNextToCartTest"/>
-          <include name="verifyDiscountVisibilityOnProductTest"/>
-          <include name="deleteProductByThreedotButtonTest"/>
-          <include name="saveButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="selectCartAgain"/>
-          <include name="clickConfirmButtonTest"/>
-          <include name="clickCustomerSearchTextboxTest"/>
-          <include name="clickCreateOrderTest"/>
-          <include name="closeBrowser"/>
-          <include name="offeringDiscountTest"/>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="addNoteText"/>
-          <include name="addNoteByThreedotButtonTest"/>
-          <include name="cancelOrderTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="verifyProductOnCartAgainTest"/>
-          <include name="clickAgainOnThreeDotsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="minusButtonTest"/>
-          <include name="verifyingAmountTest"/>
-          <include name="plusButtonTest"/>
-        </methods>
-      </class> <!-- test.Test002_Create_Order -->
-    </classes>
-  </test> <!-- TestOnFireFox(failed) -->
-  <test thread-count="5" name="TestOnEdge(failed)">
-    <parameter name="browserName" value="edge"/>
-    <classes>
-      <class name="test.Test002_Create_Order">
-        <methods>
-          <include name="verifyDeleteTest"/>
-          <include name="decreasingProductCountTest"/>
-          <include name="increasingProductCountTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="writeNoteTest"/>
-          <include name="clickBackArrowNextToCartTest"/>
-          <include name="verifyDiscountVisibilityOnProductTest"/>
-          <include name="deleteProductByThreedotButtonTest"/>
-          <include name="saveButtonTest"/>
-          <include name="openBrowser"/>
-          <include name="selectCartAgain"/>
-          <include name="clickConfirmButtonTest"/>
-          <include name="clickCustomerSearchTextboxTest"/>
-          <include name="clickCreateOrderTest"/>
-          <include name="closeBrowser"/>
-          <include name="offeringDiscountTest"/>
-          <include name="validatingTotalProductOnCartTest"/>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="addNoteText"/>
-          <include name="addNoteByThreedotButtonTest"/>
-          <include name="cancelOrderTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="selectCart"/>
-          <include name="verifyProductOnCartAgainTest"/>
-          <include name="clickAgainOnThreeDotsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="minusButtonTest"/>
-          <include name="verifyingAmountTest"/>
-          <include name="plusButtonTest"/>
-        </methods>
-      </class> <!-- test.Test002_Create_Order -->
-    </classes>
-  </test> <!-- TestOnEdge(failed) -->
 </suite> <!-- Failed suite [Smoke Testing] -->

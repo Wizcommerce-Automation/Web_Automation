@@ -204,16 +204,16 @@ public class ProductDetailsPage extends BaseTest {
 	@FindBy(xpath = "//div[@class=\"MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-j03msc\"]")
 	List<WebElement> arrowButton;
 	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	JavascriptExecutor js = (JavascriptExecutor) driver.get();
+	WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(10));
 	
 	public ProductDetailsPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 	
 	public static String validateLoginPageTitle() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		String pageTitle = driver.getTitle();
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		String pageTitle = driver.get().getTitle();
 		return  pageTitle;
 	}
 	
@@ -231,7 +231,7 @@ public class ProductDetailsPage extends BaseTest {
 //		System.out.println("enter the name of the product");
 //		String product_Name = sc.nextLine();
 //		textbox.sendKeys(product_Name); //user can also enter data
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		Assert.assertTrue(searchTextbox.isDisplayed(), "Both actual and expected are not same");
 		searchTextbox.sendKeys("SA-BC-95.5433");
 		for (int i = 0; i <= searchDd.size(); i++) {
@@ -282,7 +282,7 @@ public class ProductDetailsPage extends BaseTest {
 	}
 	
 	public void check_zoom_image() {
-		Actions actions = new Actions(driver);
+		Actions actions = new Actions(driver.get());
 		
 		actions.moveToElement(product_Image).build().perform();
 		
@@ -290,21 +290,21 @@ public class ProductDetailsPage extends BaseTest {
 	
 	//TearSheetShouldBeClickable
 	public void checkElementClickable() {
-		WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wt = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
 		
 		wt.until(ExpectedConditions.elementToBeClickable(tearSheet));
 	}
 	
 	//Check That Variant added should be clickable
 	public void checkVariantAddedClickable() {
-		WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wt = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
 		
 		wt.until(ExpectedConditions.elementToBeClickable(variantAdded));
 	}
 	
 	//Check that inventory tracker should be clickable
 	public void check_inventory_clickable() {
-		WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wt = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
 		
 		wt.until(ExpectedConditions.elementToBeClickable(inventoryIcon));
 	}
@@ -329,11 +329,11 @@ public class ProductDetailsPage extends BaseTest {
 		}
 		
 		System.out.println(available_value);
-		WebElement element = driver.findElement(By.xpath("div[aria-hidden=\"true\"]"));
+		WebElement element = driver.get().findElement(By.xpath("div[aria-hidden=\"true\"]"));
 		Thread.sleep(3000);
 		element.click();
 		
-WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wt = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
 		
 		if(available_value==0) {
 			System.out.println(wt.until(ExpectedConditions.elementToBeClickable(addToCart.get(0))));
