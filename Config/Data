@@ -1,5 +1,5 @@
 browserName: chrome
 browserName: firefox
-PreProdURL: https://ultron-git-preprod-sourcewiz.vercel.app//
+PreProdURL: https://ultron-git-feat-testing-automation-pp-sourcewiz.vercel.app/
 ProdURL: https://admin.wizcommerce.com/
 TestURL: https://ultron-git-feat-testing-automation-sourcewiz.vercel.app/

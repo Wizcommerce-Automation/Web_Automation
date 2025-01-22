@@ -1,6 +1,5 @@
 package pomPages;
 
-import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 
@@ -96,7 +95,7 @@ public class POM8_Buyer_Switching extends BaseTest {
 	WebElement user;
 
 	public POM8_Buyer_Switching() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Click on the guest customer button on top

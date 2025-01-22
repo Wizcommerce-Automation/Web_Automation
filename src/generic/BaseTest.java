@@ -36,7 +36,7 @@ import io.qameta.allure.Step;
 
 public class BaseTest extends Libraries {
 
-	public static WebDriver driver;
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 	@Parameters("browserName")
 	@BeforeClass
@@ -46,21 +46,25 @@ public class BaseTest extends Libraries {
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
 		if (browserName.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
+			WebDriver localDriver = new ChromeDriver();
+			driver.set(localDriver);
 		} else if (browserName.toString().equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
+			WebDriver localDriver = new FirefoxDriver();
+			driver.set(localDriver);
 		} else if(browserName.toString().equalsIgnoreCase("edge")){
-			driver = new EdgeDriver();
+			WebDriver localDriver = new EdgeDriver();
+			driver.set(localDriver);
 		}else {
-			driver = new ChromeDriver();
+			WebDriver localDriver = new ChromeDriver();
+			driver.set(localDriver);
 		}
 		System.out.println("Browser launched");
-		driver.get(Libraries.fetchPropertyValue("TestURL").toString());
+		driver.get().get(Libraries.fetchPropertyValue("TestURL").toString());
 		System.out.println("URL launched");
-		driver.manage().window().maximize();
+		driver.get().manage().window().maximize();
 		System.out.println("browser maximized sucessfully");
 		Thread.sleep(1000);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		File f = new File("C:\\Users\\heman\\eclipse-workspace\\Wizcom_WebAutomation\\ExcelData\\wizcom.xlsx");
 		FileInputStream fis = new FileInputStream(f);
@@ -73,14 +77,14 @@ public class BaseTest extends Libraries {
 		String uname = username.getStringCellValue();
 		String pass = password.getStringCellValue();
 
-		WebElement emailId = driver.findElement(By.xpath("//input[@id='login_email']"));
+		WebElement emailId = driver.get().findElement(By.xpath("//input[@id='login_email']"));
 
 		emailId.sendKeys(uname);
-		WebElement passcode = driver.findElement(By.xpath("//input[@id='login_password']"));
+		WebElement passcode = driver.get().findElement(By.xpath("//input[@id='login_password']"));
 		passcode.sendKeys(pass);
 	   
 
-		WebElement loginBtn = driver.findElement(By.xpath("//button[@id='login_submit']"));
+		WebElement loginBtn = driver.get().findElement(By.xpath("//button[@id='login_submit']"));
 		loginBtn.click();
 
 	}
@@ -89,8 +93,9 @@ public class BaseTest extends Libraries {
 	@Step("Close Browser")
 	public void closeBrowser() throws Exception {
 		try {
-			Thread.sleep(5000);
-			driver.quit();
+			WebDriver localDriver = driver.get(); 
+            Thread.sleep(5000); 
+            localDriver.quit();
 			// driver.close();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

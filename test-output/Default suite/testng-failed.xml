@@ -3,39 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Test002_Create_Order">
+      <class name="test.Test001_Login_Logout">
         <methods>
-          <include name="verifyDeleteTest"/>
-          <include name="decreasingProductCountTest"/>
-          <include name="increasingProductCountTest"/>
-          <include name="clickChooseCustomerTest"/>
-          <include name="writeNoteTest"/>
-          <include name="clickBackArrowNextToCartTest"/>
-          <include name="verifyDiscountVisibilityOnProductTest"/>
-          <include name="deleteProductByThreedotButtonTest"/>
-          <include name="saveButtonTest"/>
+          <include name="loginAllCasesTest"/>
+          <include name="setupExcelFile"/>
+          <include name="forgotPassTest"/>
+          <include name="passwordEyeTest"/>
+          <include name="bookaDemoTest"/>
           <include name="openBrowser"/>
-          <include name="selectCartAgain"/>
-          <include name="clickConfirmButtonTest"/>
-          <include name="clickCustomerSearchTextboxTest"/>
-          <include name="clickCreateOrderTest"/>
+          <include name="loginPageTitleTest"/>
+          <include name="bottomLineTest"/>
           <include name="closeBrowser"/>
-          <include name="offeringDiscountTest"/>
-          <include name="validatingTotalProductOnCartTest"/>
-          <include name="clickSubmitOrderButtonTest"/>
-          <include name="addNoteText"/>
-          <include name="addNoteByThreedotButtonTest"/>
-          <include name="cancelOrderTest"/>
-          <include name="clickProceedButtonTest"/>
-          <include name="selectCart"/>
-          <include name="verifyProductOnCartAgainTest"/>
-          <include name="clickAgainOnThreeDotsButtonTest"/>
-          <include name="clickCreateOrder2ButtonTest"/>
-          <include name="minusButtonTest"/>
-          <include name="verifyingAmountTest"/>
-          <include name="plusButtonTest"/>
+          <include name="logoutTest"/>
+          <include name="logoTest"/>
+          <include name="headingTest"/>
         </methods>
-      </class> <!-- test.Test002_Create_Order -->
+      </class> <!-- test.Test001_Login_Logout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

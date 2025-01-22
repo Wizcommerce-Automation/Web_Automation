@@ -17,7 +17,7 @@ import io.qameta.allure.Step;
 
 public class POM1_Login_Logout_Page {
 
-	public static WebDriver driver;
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 	@FindBy(xpath = "//input[@id='login_email']")
 	WebElement username;
@@ -46,17 +46,17 @@ public class POM1_Login_Logout_Page {
 	@FindBy(xpath = "//button[starts-with(text(),\"Book a Demo\")]")
 	WebElement bookADemoBtn;
 
-	@FindBy(xpath = "//button[@id='sidebar-item-19']")
+	@FindBy(xpath = "//button[@id='sidebar-item-12']")
 	WebElement logoutBtn;
 
 	public POM1_Login_Logout_Page() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 	// Verifying login page title
 	@Step("Get title of login page")
 	public String validateLoginPageTitle() {
-		String pageTitle = driver.getTitle();
+		String pageTitle = driver.get().getTitle();
 		return pageTitle;
 	}
 

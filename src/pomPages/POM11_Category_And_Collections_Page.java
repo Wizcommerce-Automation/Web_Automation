@@ -145,11 +145,11 @@ public class POM11_Category_And_Collections_Page extends BaseTest {
 	WebElement addExistingProductsBtn;
 	
 	public POM11_Category_And_Collections_Page() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Actions a = new Actions(driver);
+	JavascriptExecutor js = (JavascriptExecutor) driver.get();
+	Actions a = new Actions(driver.get());
 
 //Verify category view all button and verify  product count 
 	@Step("Steps to verify category view all button and verify  product count")

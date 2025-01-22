@@ -36,7 +36,7 @@ public class ProductListingPage extends BaseTest {
 	WebElement applyButton;
 	
 	public ProductListingPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 	
 	public void addToCart() throws InterruptedException {
@@ -55,7 +55,7 @@ public class ProductListingPage extends BaseTest {
 			if(addtoCart.size()-extraLength == size-i-1 || i==size-1) {
 				if(i==size-1) {
 					i=0;
-					driver.findElement(By.xpath("//div[@id='root']//button[contains(text(), \""+(++count)+"\")]"));
+					driver.get().findElement(By.xpath("//div[@id='root']//button[contains(text(), \""+(++count)+"\")]"));
 				}
 			}
 			else {
@@ -71,7 +71,7 @@ public class ProductListingPage extends BaseTest {
 					if(customizeSidebar.isDisplayed()) {
 						extraLength+=2;
 						customizeSidebarCloseButton.click();
-//						driver.findElement(By.xpath("//button[normalize-space()='Discard']")).click();
+//						driver.get().findElement(By.xpath("//button[normalize-space()='Discard']")).click();
 					}
 				}catch(Exception error) {
 					System.out.println("There is no CustomizeSidebar");

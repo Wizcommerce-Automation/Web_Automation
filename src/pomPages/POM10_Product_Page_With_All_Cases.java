@@ -403,11 +403,11 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 	WebElement addToCartViewSimilar_WhenRecOn;
 
 	public POM10_Product_Page_With_All_Cases() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Actions a = new Actions(driver);
+	JavascriptExecutor js = (JavascriptExecutor) driver.get();
+	Actions a = new Actions(driver.get());
 
 // Click on cart button if product visible on cart icon else continue with product search
 	public void productsVisibleOnCartIcon() throws Exception {
@@ -1219,7 +1219,7 @@ public class POM10_Product_Page_With_All_Cases extends BaseTest {
 				});
 				
 				Thread.sleep(1500);
-				JavascriptExecutor js = (JavascriptExecutor) driver;
+				JavascriptExecutor js = (JavascriptExecutor) driver.get();
 				js.executeScript("document.querySelector(\"#rootContainer\").scrollBy(0,-8000)");
 				Assert.assertTrue(viewSimilarBtnProduct1.isEnabled(), "Both actual and expected are not same");
 				viewSimilarBtnProduct1.click();

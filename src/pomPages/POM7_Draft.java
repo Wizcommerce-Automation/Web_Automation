@@ -44,7 +44,7 @@ public class POM7_Draft extends BaseTest {
 	WebElement mainID;
 
 	public POM7_Draft() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Verifying customer name

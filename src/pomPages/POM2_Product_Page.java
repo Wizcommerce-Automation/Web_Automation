@@ -158,8 +158,8 @@ public class POM2_Product_Page extends BaseTest {
 	private WebDriverWait wait;
 
 	public POM2_Product_Page() {
-		PageFactory.initElements(driver, this);
-		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		PageFactory.initElements(driver.get(), this);
+		wait = new WebDriverWait(driver.get(), Duration.ofSeconds(15));
 	}
 	
 
@@ -167,7 +167,7 @@ public class POM2_Product_Page extends BaseTest {
 	@Step("Click on product button on dashboard")
 	public void clickProduct() throws Exception {
 //		System.out.println(JSONUtil.getXPath("productBtn"));
-//		WebElement productBtn = driver.findElement(By.xpath(JSONUtil.getXPath("productBtn")));
+//		WebElement productBtn = driver.get().findElement(By.xpath(JSONUtil.getXPath("productBtn")));
 		wait.until(ExpectedConditions.elementToBeClickable(productBtn)).click();
 	}
 
@@ -216,7 +216,7 @@ public class POM2_Product_Page extends BaseTest {
 //		System.out.println("enter the name of the product");
 //		String product_Name = sc.nextLine();
 //		textbox.sendKeys(product_Name); //user can also enter data
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		Assert.assertTrue(searchTextbox.isDisplayed(), "Both actual and expected are not same");
 		Thread.sleep(3000);		
 		searchTextbox.sendKeys("chair");
@@ -244,7 +244,7 @@ public class POM2_Product_Page extends BaseTest {
 	public void selectProduct1() throws Exception {
 
 		try {
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 			Thread.sleep(3000);
 			Assert.assertTrue(product1.isEnabled(), "Both actual and expected are not same");
 			product1.click();
@@ -260,7 +260,7 @@ public class POM2_Product_Page extends BaseTest {
 	public void selectProduct2() throws Exception {
 
 		try {
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 			Thread.sleep(3000);
 			Assert.assertTrue(product2.isEnabled(), "Both actual and expected are not same");
 			product2.click();
@@ -276,7 +276,7 @@ public class POM2_Product_Page extends BaseTest {
 	public void selectProduct3() throws Exception {
 
 		try {
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 			Thread.sleep(3000);
 			Assert.assertTrue(product3.isEnabled(), "Both actual and expected are not same");
 			
@@ -293,7 +293,7 @@ public class POM2_Product_Page extends BaseTest {
 	public void selectProduct4() throws Exception {
 
 		try {
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 			Thread.sleep(3000);
 			Assert.assertTrue(product4.isEnabled(), "Both actual and expected are not same");
 
@@ -368,7 +368,7 @@ public class POM2_Product_Page extends BaseTest {
 // Click on three dots button near a product and deleting that product by click on delete item
 	@Step("1. Click on three dots button. \n\n 2. Click on delete item")
 	public void clickThreeDotsButton() throws Exception {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver.get();
 		js.executeScript("document.querySelector(\"#rootContainer\").scrollBy(0,-8000)");
 		Assert.assertTrue(threeDotsBtn.isEnabled(), "Both actual and expected are not same");
 		threeDotsBtn.click();
@@ -387,7 +387,7 @@ public class POM2_Product_Page extends BaseTest {
 	@Step("Click on Minus Button")
 	public void clickMinusButton() throws Exception {
 		Assert.assertTrue(minusIcon.isEnabled(), "Both actual and expected are not same");
-		Actions a = new Actions(driver);
+		Actions a = new Actions(driver.get());
 		a.moveToElement(minusIcon).click().build().perform();
 		Thread.sleep(2000);
 	}
@@ -404,7 +404,7 @@ public class POM2_Product_Page extends BaseTest {
 // Click on three dots button near a product and adding note in a product by click on add note
 	@Step("1. Click on Three Dots Button \n\n2. Click on Add note")
 	public void clickAgainThreeDotsButton() throws Exception {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver.get();
 		js.executeScript("window.scrollBy(0,-8000)");
 		Assert.assertTrue(threeDotsBtn1.isEnabled(), "Both actual and expected are not same");
 		threeDotsBtn1.click();

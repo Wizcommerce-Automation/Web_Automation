@@ -40,6 +40,9 @@ import pomPages.POM1_Login_Logout_Page;
 //@Listeners(ListenerForTest001.class)
 //@Listeners(Listener.class)
 public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
+	
+	private String excelFilePath;
+
 
 	@Epic("Sign In flow")
 	@Feature("Login form")
@@ -52,38 +55,33 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
 		if (browserName.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
+			WebDriver localDriver = new ChromeDriver();
+			driver.set(localDriver);
 		} else if (browserName.toString().equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
+			WebDriver localDriver = new FirefoxDriver();
+			driver.set(localDriver);
 		} else if(browserName.toString().equalsIgnoreCase("edge")){
-			driver = new EdgeDriver();
+			WebDriver localDriver = new EdgeDriver();
+			driver.set(localDriver);
 		}else {
-			driver = new ChromeDriver();
+			WebDriver localDriver = new ChromeDriver();
+			driver.set(localDriver);
 		}
 		System.out.println("Browser launched");
-		driver.get(Libraries.fetchPropertyValue("TestURL").toString());
-		//driver.get(Libraries.fetchPropertyValue("ProdURL").toString());
+		driver.get().get(Libraries.fetchPropertyValue("TestURL").toString());
 		System.out.println("URL launched");
-		driver.manage().window().maximize();
+		driver.get().manage().window().maximize();
 		System.out.println("browser maximized sucessfully");
 		Thread.sleep(1000);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
-
-//	
-//	 @Story("verify that user should be able to enter email")
-//	 	@Test(priority = 2,description = "validating user should be able to enter email and password")
-//	     @Severity(SeverityLevel.MINOR)
-//	     public void logintest() throws Exception {
-//	    	 
-//	    	 
-//	    			pomPages.CreateCustomerPage email_field = new pomPages.CreateCustomerPage();
-//	    			email_field.login();
-//	    			
-//	     }
-//	
-//	
+	
+	@Parameters("ExcellFile")
+    @BeforeClass
+    public void setupExcelFile(String excelFilePath) {
+        this.excelFilePath = excelFilePath;
+    }
 	
 	@Test(priority = 2, description = "Validating Login Page Title")
 	@Severity(SeverityLevel.NORMAL)
@@ -166,7 +164,8 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 		String osname = System.getProperty("os.name");
 		File f;
 		if(osname.toLowerCase().contains("windows 11")){
-		    f = new File(System.getProperty("user.dir")+"/ExcelData/wizcom.xlsx");
+//		    f = new File(System.getProperty("user.dir")+"/ExcelData/wizcom.xlsx");
+		    f = new File(System.getProperty("user.dir")+excelFilePath);
 		}
 		else {
 			f = new File(System.getProperty("/Users/user/automation-testing/ExcelData"));
@@ -201,8 +200,9 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 	@Description("Test Description: Verifying closing the browser")
 	@Story("Story Name: To check Browser closed")
 	public void closeBrowser() throws Exception {
-		Thread.sleep(5000);
-		driver.quit();
+		WebDriver localDriver = driver.get(); 
+        Thread.sleep(5000); 
+        localDriver.quit();
 		// driver.close();
 		System.out.println("browser closed");
 	}

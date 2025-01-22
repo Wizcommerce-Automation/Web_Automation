@@ -1,7 +1,5 @@
 package pomPages;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 
@@ -59,7 +57,7 @@ public class POM9_Container extends BaseTest {
 	WebElement user;
 
 	public POM9_Container() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver.get(), this);
 	}
 
 // Verify that container box visible	
@@ -73,7 +71,7 @@ public class POM9_Container extends BaseTest {
 	public void toggleSwitch() throws Exception {
 		Assert.assertTrue(containerToggleSwitch.isEnabled(), "both expected and actual are not same");
 		Thread.sleep(3000);
-		Actions a = new Actions(driver);
+		Actions a = new Actions(driver.get());
 		a.moveToElement(containerToggleSwitch).click().build().perform();
 		Thread.sleep(3000);
 	}
@@ -84,7 +82,7 @@ public class POM9_Container extends BaseTest {
 		Assert.assertTrue(containerWholeBox.isDisplayed(), "both expected and actual are not same");
 		boolean displayed = containerWholeBox.isDisplayed();
 		if (displayed == true) {
-			Actions a = new Actions(driver);
+			Actions a = new Actions(driver.get());
 			Assert.assertTrue(containerToggleSwitch.isEnabled(), "both expected and actual are not same");
 			a.moveToElement(containerToggleSwitch).click().build().perform();
 			Thread.sleep(3000);
@@ -132,7 +130,7 @@ public class POM9_Container extends BaseTest {
 	@Step("Click on CFT from dropdown")
 	public void clickCFTAgainAndSelctCFTFromDropdown() throws Exception {
 		Assert.assertTrue(CFT.isEnabled(), "both expected and actual are not same");
-		Actions a = new Actions(driver);
+		Actions a = new Actions(driver.get());
 		a.moveToElement(CFT).build().perform();
 		Thread.sleep(3000);
 		Assert.assertTrue(VolumeContainerCFTdropdown.isEnabled(), "both expected and actual are not same");
