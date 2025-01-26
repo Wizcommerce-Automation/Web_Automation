@@ -1,11 +1,15 @@
 package pomPages;
 
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -200,13 +204,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = a_demo.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if(user.getText().equals("QT")){
 			Assert.assertTrue(customerDetailsOnQuote.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = customerDetailsOnQuote.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer details on Quote:-" + text1_qa);
-			String a_qa = "ShadhKhan2Qateams\r\n" + "\r\n" + "test@wi.xom\r\n" + "\r\n" + "+1 757-894-5793";
+			String a_qa = getDataFromExcell(1,5);
 			String expe_qa = a_qa.replaceAll("\\s", "");
 			Assert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -229,13 +233,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = s_demo.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if (user.getText().equals("QT")){
 			Assert.assertTrue(billingAddressOnQuote.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = billingAddressOnQuote.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer Billing details on Quote:-" + text1_qa);
-			String s_qa = "ShadKhanmdshad@wizcommerce.com+1757-378-4989123WilliamSt,ManhattanNewYork,NewYork,10038USA";
+			String s_qa = getDataFromExcell(2,5);
 			String expe_qa = s_qa.replaceAll("\\s", "");
 			Assert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -256,13 +260,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = s_demo.replaceAll("\\s", "");
 			Assert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if (user.getText().equals("QT")) {
 			Assert.assertTrue(shippingAddressOnQuote.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = shippingAddressOnQuote.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer Shipping details on Quote:-" + text1_qa);
-			String s_qa = "ShadKhanmdshad@wizcommerce.com+1757-378-4989123WilliamSt,ManhattanNewYork,NewYork,10038USA";
+			String s_qa = getDataFromExcell(3, 5);
 			String expe_qa = s_qa.replaceAll("\\s", "");
 			Assert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -278,11 +282,11 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			System.out.println(text_demo);
 			Assert.assertEquals(text_demo, "mdshad@wizcommerce.com", "Both actual and expected are not same");
 			Thread.sleep(3000);
-		} else {
+		} else if (user.getText().equals("DC")) {
 			Assert.assertTrue(mailIdQuotePage.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = mailIdQuotePage.getText();
 			System.out.println(text_qa);
-			Assert.assertEquals(text_qa, "test@wi.xom", "Both actual and expected are not same");
+			Assert.assertEquals(text_qa, getDataFromExcell(4, 5), "Both actual and expected are not same");
 			Thread.sleep(3000);
 		}
 	}
@@ -375,23 +379,20 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 		Thread.sleep(8000);
 	}
 
-// Copy order ID from quote page
-	@Step("Copy order Id  from Quote page")
+	@Step("Copy Order Id")
 	public void copyOrderId() throws Exception {
-		Thread.sleep(5000);
-		Actions a = new Actions(driver.get());
-		Assert.assertTrue(orderId.isEnabled(), "Both actual and expected are not same");
-		a.moveToElement(orderId).doubleClick().build().perform();
-		Thread.sleep(4000);
-		System.out.println(orderId.getText());
-		String text = orderId.getText();
-		Thread.sleep(4000);
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_C);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_C);
+	    Thread.sleep(5000); // Optional, use WebDriverWait for better reliability
+	    Actions a = new Actions(driver.get());
+	    Assert.assertTrue(orderId.isEnabled(), "Order ID element is not enabled");
 
+	    // Get the text from the orderId element directly
+	    String orderText = orderId.getText();
+	    System.out.println("Order ID copied: " + orderText);
+
+	    // Copy to the system clipboard
+	    StringSelection stringSelection = new StringSelection(orderText);
+	    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+	    clipboard.setContents(stringSelection, null); // Set the clipboard content
 	}
 
 // Click save for later button on quote page
@@ -407,22 +408,29 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 // Paste order Id on referance Id textbox opens after clicking on save later button and press enter 
 	@Step("Paste order Id on referance Id textbox opens after clicking on save later button and press enter")
 	public void pasteOrderId() throws Exception {
-		Thread.sleep(1000);
-		driver.get().findElement(By.xpath("//button[2]")).click();
-		Robot robot = new Robot();
-		Thread.sleep(3000);
-		Assert.assertTrue(referenceIDTextbox.isEnabled(), "Both actual and expected are not same");
-		referenceIDTextbox.click();
-		Thread.sleep(3000);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_V);
+	    Thread.sleep(1000); // Optional, use WebDriverWait for better reliability
 
-		Thread.sleep(4000);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(6000);
+	    // Find and click the button that opens the reference ID textbox
+	    driver.get().findElement(By.xpath("//button[2]")).click();
+	    Thread.sleep(3000);
+
+	    // Wait for the textbox to be ready
+	    Assert.assertTrue(referenceIDTextbox.isEnabled(), "Reference ID textbox is not enabled");
+
+	    // Click on the reference ID textbox to focus
+	    referenceIDTextbox.click();
+	    Thread.sleep(3000);
+
+	    // Paste using the clipboard content (Ctrl + V)
+	    referenceIDTextbox.sendKeys(Keys.CONTROL + "v");
+
+	    // Wait for a moment to ensure the text is entered
+	    Thread.sleep(4000);
+
+	    // Press Enter to submit
+	    referenceIDTextbox.sendKeys(Keys.ENTER);
+
+	    Thread.sleep(6000); // Optional, adjust based on the application load time
 	}
 
 // Verify type status
@@ -520,13 +528,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = a_demo.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if (user.getText().equals("QT")) {
 			Assert.assertTrue(cusDetailsOrderPage.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = cusDetailsOrderPage.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer details on Order:-" + text1_qa);
-			String a_qa = "Jessica\r\n" + "\r\n" + "demo@demo.com\r\n" + "\r\n" + "+1 948-922-982";
+			String a_qa = getDataFromExcell(1, 6);
 			String expe_qa = a_qa.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -548,15 +556,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = s_demo.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if (user.getText().equals("DC")) {
 			Assert.assertTrue(billingAddressOrderPage.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = billingAddressOrderPage.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer Billing details on Order:-" + text1_qa);
-			String s_qa = "Emily Johnson\r\n" + "\r\n"
-					+ "White House, Pennsylvania Avenue Northwest, Washington, DC, USA\r\n" + "\r\n"
-					+ "Washington, District of Columbia, 20500\r\n" + "\r\n" + "United States of America ";
+			String s_qa = getDataFromExcell(2, 6);
 			String expe_qa = s_qa.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -578,15 +584,13 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			String expe_demo = s_demo.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_demo, expe_demo, "Both actual and expected are not same");
 			Thread.sleep(4000);
-		} else {
+		} else if (user.getText().equals("DC")){
 			Assert.assertTrue(shippingAddressOrderPage.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = shippingAddressOrderPage.getText();
 			System.out.println(text_qa);
 			String text1_qa = text_qa.replaceAll("\\s", "");
 			System.out.println("Customer Shipping details on Order:-" + text1_qa);
-			String s_qa = "Emily Johnson\r\n" + "\r\n"
-					+ "White House, Pennsylvania Avenue Northwest, Washington, DC, USA\r\n" + "\r\n"
-					+ "Washington, District of Columbia, 20500\r\n" + "\r\n" + "United States of America";
+			String s_qa = getDataFromExcell(3, 6);
 			String expe_qa = s_qa.replaceAll("\\s", "");
 			softAssert.assertEquals(text1_qa, expe_qa, "Both actual and expected are not same");
 			Thread.sleep(4000);
@@ -663,11 +667,11 @@ public class POM4_Convert_Quote_To_Order extends BaseTest {
 			System.out.println(text_demo);
 			Assert.assertEquals(text_demo, "mdshad@wizcommerce.com", "Both actual and expected are not same");
 			Thread.sleep(3000);
-		} else {
+		} else if (user.getText().equals("QT")) {
 			Assert.assertTrue(mailIdOrderPage.isDisplayed(), "Both actual and expected are not same");
 			String text_qa = mailIdOrderPage.getText();
 			System.out.println(text_qa);
-			Assert.assertEquals(text_qa, "test@wi.xom", "Both actual and expected are not same");
+			Assert.assertEquals(text_qa, getDataFromExcell(4, 6), "Both actual and expected are not same");
 			Thread.sleep(3000);
 		}
 	}

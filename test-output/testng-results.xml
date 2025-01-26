@@ -1,151 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+<testng-results ignored="0" total="23" passed="23" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-22T19:08:49 IST" name="Suite" finished-at="2025-01-22T19:10:00 IST" duration-ms="70815">
+  <suite started-at="2025-01-26T21:48:48 IST" name="Default suite" finished-at="2025-01-26T21:51:55 IST" duration-ms="187258">
     <groups>
     </groups>
-    <test started-at="2025-01-22T19:08:49 IST" name="TestWithDemoAccount" finished-at="2025-01-22T19:10:00 IST" duration-ms="70815">
-      <class name="test.Test001_Login_Logout">
-        <test-method is-config="true" signature="setupExcelFile(java.lang.String)[pri:0, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:49 IST" name="setupExcelFile" finished-at="2025-01-22T19:08:49 IST" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[/ExcelData/wizcomDemoAccount.xlsx]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupExcelFile -->
-        <test-method signature="openBrowser(java.lang.String)[pri:1, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:49 IST" name="openBrowser" description="Launching browser and open URL" finished-at="2025-01-22T19:08:57 IST" duration-ms="8041" status="PASS">
+    <test started-at="2025-01-26T21:48:48 IST" name="Default test" finished-at="2025-01-26T21:51:55 IST" duration-ms="187258">
+      <class name="test.Test003_Convert_Quote_To_Order">
+        <test-method is-config="true" signature="openBrowser(java.lang.String,java.lang.String)[pri:0, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:48:48 IST" name="openBrowser" finished-at="2025-01-26T21:48:56 IST" duration-ms="8647" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[/ExcelData/wizcom.xlsx]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="loginPageTitleTest()[pri:2, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:58 IST" name="loginPageTitleTest" description="Validating Login Page Title" finished-at="2025-01-22T19:08:58 IST" duration-ms="58" status="PASS">
+        <test-method signature="productButtonTest()[pri:1, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:48:56 IST" name="productButtonTest" description="Click on product button" finished-at="2025-01-26T21:48:59 IST" duration-ms="2519" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginPageTitleTest -->
-        <test-method signature="logoTest()[pri:3, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:58 IST" name="logoTest" description="Validating Page Logo" finished-at="2025-01-22T19:08:59 IST" duration-ms="1063" status="PASS">
+        </test-method> <!-- productButtonTest -->
+        <test-method signature="selectProduct()[pri:2, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:48:59 IST" name="selectProduct" description="Adding products to cart" finished-at="2025-01-26T21:49:39 IST" duration-ms="39736" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoTest -->
-        <test-method signature="headingTest()[pri:4, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:59 IST" name="headingTest" description="Validating Page Heading" finished-at="2025-01-22T19:08:59 IST" duration-ms="55" status="PASS">
+        </test-method> <!-- selectProduct -->
+        <test-method signature="selectCart()[pri:3, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:49:39 IST" name="selectCart" description="Moving towards Cart page" finished-at="2025-01-26T21:49:43 IST" duration-ms="4417" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- headingTest -->
-        <test-method signature="passwordEyeTest()[pri:5, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:59 IST" name="passwordEyeTest" description="Validating Password Eye Button" finished-at="2025-01-22T19:08:59 IST" duration-ms="46" status="PASS">
+        </test-method> <!-- selectCart -->
+        <test-method signature="clickCreateOrderTest()[pri:4, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:49:43 IST" name="clickCreateOrderTest" description="clicking on Create quote button on cart page" finished-at="2025-01-26T21:49:49 IST" duration-ms="5343" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- passwordEyeTest -->
-        <test-method signature="forgotPassTest()[pri:6, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:59 IST" name="forgotPassTest" description="Validating Forgot Password Button" finished-at="2025-01-22T19:08:59 IST" duration-ms="28" status="PASS">
+        </test-method> <!-- clickCreateOrderTest -->
+        <test-method signature="clickChooseCustomerTest()[pri:5, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:49:49 IST" name="clickChooseCustomerTest" description="clicking on Choose customer button" finished-at="2025-01-26T21:49:57 IST" duration-ms="8284" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgotPassTest -->
-        <test-method signature="bottomLineTest()[pri:7, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:59 IST" name="bottomLineTest" description="Validating Bottom Line Title" finished-at="2025-01-22T19:08:59 IST" duration-ms="37" status="PASS">
+        </test-method> <!-- clickChooseCustomerTest -->
+        <test-method signature="customerSearchTest()[pri:6, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:49:57 IST" name="customerSearchTest" description="Searching customer" finished-at="2025-01-26T21:50:12 IST" duration-ms="15578" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bottomLineTest -->
-        <test-method signature="bookaDemoTest()[pri:8, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:08:59 IST" name="bookaDemoTest" description="Validating Book a Demo Button" finished-at="2025-01-22T19:08:59 IST" duration-ms="32" status="PASS">
+        </test-method> <!-- customerSearchTest -->
+        <test-method signature="clickCreateOrder2ButtonTest()[pri:7, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:12 IST" name="clickCreateOrder2ButtonTest" description="Click on create quote" finished-at="2025-01-26T21:50:21 IST" duration-ms="8285" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bookaDemoTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:02 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2025-01-22T19:09:10 IST" duration-ms="8496" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[demo@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- clickCreateOrder2ButtonTest -->
+        <test-method signature="clickProceedButtonTest()[pri:8, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:21 IST" name="clickProceedButtonTest" description="Click on proceed button" finished-at="2025-01-26T21:50:26 IST" duration-ms="5197" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:10 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2025-01-22T19:09:20 IST" duration-ms="9861" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[xyz@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- clickProceedButtonTest -->
+        <test-method signature="verifyCustomerDetailsOnQuoteTest()[pri:9, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:26 IST" name="verifyCustomerDetailsOnQuoteTest" description="Verify customer details" finished-at="2025-01-26T21:50:30 IST" duration-ms="4186" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:20 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2025-01-22T19:09:30 IST" duration-ms="9647" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- verifyCustomerDetailsOnQuoteTest -->
+        <test-method signature="verifyBillingDetailsOnQuoteTest()[pri:10, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:30 IST" name="verifyBillingDetailsOnQuoteTest" description="Verify billing address details on quote" finished-at="2025-01-26T21:50:34 IST" duration-ms="4171" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:30 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2025-01-22T19:09:39 IST" duration-ms="9358" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[xyz@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[lui]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- verifyBillingDetailsOnQuoteTest -->
+        <test-method signature="verifyShippingDetailsOnQuoteTest()[pri:11, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:34 IST" name="verifyShippingDetailsOnQuoteTest" description="Verify shipping address details on quote" finished-at="2025-01-26T21:50:38 IST" duration-ms="4145" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="loginAllCasesTest(java.lang.String,java.lang.String)[pri:9, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:39 IST" name="loginAllCasesTest" description="Login Cases" data-provider="credentials" finished-at="2025-01-22T19:09:49 IST" duration-ms="10456" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[demo@sourcewiz.co]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- verifyShippingDetailsOnQuoteTest -->
+        <test-method signature="getMailIdOnQuotePageTest()[pri:12, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:38 IST" name="getMailIdOnQuotePageTest" description="Verify mailId details on quote" finished-at="2025-01-26T21:50:39 IST" duration-ms="62" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAllCasesTest -->
-        <test-method signature="logoutTest()[pri:10, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:49 IST" name="logoutTest" description="Logout" finished-at="2025-01-22T19:09:55 IST" depends-on-methods="test.Test001_Login_Logout.loginAllCasesTest" duration-ms="5392" status="PASS">
+        </test-method> <!-- getMailIdOnQuotePageTest -->
+        <test-method signature="clickTearSheetIconTest()[pri:13, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:39 IST" name="clickTearSheetIconTest" description="Click on tear sheet icon" finished-at="2025-01-26T21:50:43 IST" duration-ms="4121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoutTest -->
-        <test-method signature="closeBrowser()[pri:11, instance:test.Test001_Login_Logout@4ec0229c]" started-at="2025-01-22T19:09:55 IST" name="closeBrowser" description="Closing browser" finished-at="2025-01-22T19:10:00 IST" duration-ms="5236" status="PASS">
+        </test-method> <!-- clickTearSheetIconTest -->
+        <test-method signature="clickExcelSheet()[pri:14, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:43 IST" name="clickExcelSheet" description="Click on Excel Sheet for downloading" finished-at="2025-01-26T21:50:47 IST" duration-ms="4274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickExcelSheet -->
+        <test-method signature="clickTearSheetIconAgainTest()[pri:15, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:47 IST" name="clickTearSheetIconAgainTest" description="Click on tear sheet icon again" finished-at="2025-01-26T21:50:51 IST" duration-ms="4156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickTearSheetIconAgainTest -->
+        <test-method signature="clickPDFTest()[pri:16, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:51 IST" name="clickPDFTest" description="Click on PDF for downloading" finished-at="2025-01-26T21:50:55 IST" duration-ms="4248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickPDFTest -->
+        <test-method signature="verifyTotalAndPendingAmtTest()[pri:17, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:55 IST" name="verifyTotalAndPendingAmtTest" description="Verify total and pending amount" finished-at="2025-01-26T21:50:59 IST" duration-ms="4129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTotalAndPendingAmtTest -->
+        <test-method signature="clickThreeDotsTest()[pri:18, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:50:59 IST" name="clickThreeDotsTest" description="Click on three dots button" finished-at="2025-01-26T21:51:04 IST" duration-ms="4177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickThreeDotsTest -->
+        <test-method signature="threeDotsDropdownTest()[pri:19, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:04 IST" name="threeDotsDropdownTest" description="Click on Cancel quote from dropdown" finished-at="2025-01-26T21:51:08 IST" duration-ms="4326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- threeDotsDropdownTest -->
+        <test-method signature="handlingCancelQuoteCheckboxTest()[pri:20, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:08 IST" name="handlingCancelQuoteCheckboxTest" description="Handling cancel quote check box" finished-at="2025-01-26T21:51:18 IST" duration-ms="10323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handlingCancelQuoteCheckboxTest -->
+        <test-method signature="copyOrderIdTest()[pri:21, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:18 IST" name="copyOrderIdTest" description="Copy Id" finished-at="2025-01-26T21:51:24 IST" duration-ms="5263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- copyOrderIdTest -->
+        <test-method signature="selectSaveForLater()[pri:22, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:24 IST" name="selectSaveForLater" description="Selecting save for later to submit quote" finished-at="2025-01-26T21:51:32 IST" duration-ms="8244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectSaveForLater -->
+        <test-method signature="pasteOrderIdTest()[pri:23, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:32 IST" name="pasteOrderIdTest" description="Paste Id in reference textbox" finished-at="2025-01-26T21:51:50 IST" duration-ms="17784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pasteOrderIdTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.Test003_Convert_Quote_To_Order@6921cfa]" started-at="2025-01-26T21:51:50 IST" name="closeBrowser" finished-at="2025-01-26T21:51:55 IST" duration-ms="5269" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- test.Test001_Login_Logout -->
-    </test> <!-- TestWithDemoAccount -->
-  </suite> <!-- Suite -->
+      </class> <!-- test.Test003_Convert_Quote_To_Order -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

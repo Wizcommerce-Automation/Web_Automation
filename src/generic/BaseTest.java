@@ -27,6 +27,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -37,12 +38,15 @@ import io.qameta.allure.Step;
 public class BaseTest extends Libraries {
 
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	
+	private static ThreadLocal<String> excelFilePath = new ThreadLocal<>();
 
-	@Parameters("browserName")
+	@Parameters({"browserName", "ExcellFile"})
 	@BeforeClass
 	@Step("Open Browser")
-	public void openBrowser(String browserName) throws Exception {
-
+	public void openBrowser(@Optional("chrome")String browserName, @Optional("/ExcelData/wizcom.xlsx")String ExcellFile) throws Exception {
+		excelFilePath.set(ExcellFile);
+		System.out.println("excelFilePathinBaseClass"+ excelFilePath.get());
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -65,12 +69,10 @@ public class BaseTest extends Libraries {
 		System.out.println("browser maximized sucessfully");
 		Thread.sleep(1000);
 		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
-		File f = new File("C:\\Users\\heman\\eclipse-workspace\\Wizcom_WebAutomation\\ExcelData\\wizcom.xlsx");
+		File f = new File(System.getProperty("user.dir")+excelFilePath.get());
 		FileInputStream fis = new FileInputStream(f);
 		XSSFWorkbook book = new XSSFWorkbook(fis);
 		XSSFSheet loginSheet = book.getSheet("Sheet1");
-		Object testData[][] = new Object[1][2];
 		XSSFRow row1 = loginSheet.getRow(1);
 		XSSFCell username = row1.getCell(0);
 		XSSFCell password = row1.getCell(1);
@@ -88,6 +90,25 @@ public class BaseTest extends Libraries {
 		loginBtn.click();
 
 	}
+	
+	
+	public String getDataFromExcell(int i, int j) throws IOException {
+		System.out.println("ExcellFilePath: " + excelFilePath.get());
+	    File f = new File(System.getProperty("user.dir") + excelFilePath.get());
+		FileInputStream fis = new FileInputStream(f);
+		try (XSSFWorkbook book = new XSSFWorkbook(fis)) {
+			XSSFSheet loginSheet = book.getSheet("Login_Data");
+			XSSFRow row = loginSheet.getRow(i);
+			XSSFCell col = row.getCell(j);
+			String value = col.getStringCellValue();
+			return value;
+		} catch(Exception error) {
+			System.out.println("Excell Data Fetching Error"+error.getMessage());
+			return "Excell Data is Null: "+ error.getMessage();
+		}
+		
+	}
+
 
 	@AfterClass
 	@Step("Close Browser")

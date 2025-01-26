@@ -21,6 +21,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -51,7 +52,7 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Test Description: Verifying launching the browser and opening the URL")
 	@Story("Story Name: To check Browser launched and URL opens")
-	public void openBrowser(String browserName) throws Exception {
+	public void openBrowser(@Optional("chrome")String browserName) throws Exception {
 		System.out.println("Your OS version -> " + System.getProperty("os.name"));
 		String osname = System.getProperty("os.name");
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -79,7 +80,7 @@ public class Test001_Login_Logout extends POM1_Login_Logout_Page  {
 	
 	@Parameters("ExcellFile")
     @BeforeClass
-    public void setupExcelFile(String excelFilePath) {
+    public void setupExcelFile(@Optional("/ExcelData/wizcom.xlsx")String excelFilePath) {
         this.excelFilePath = excelFilePath;
     }
 	

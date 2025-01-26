@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TestOnChrome(failed)">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="TestWithDemoAccount(failed)">
+    <parameter name="ExcellFile" value="/ExcelData/wizcomDemoAccount.xlsx"/>
+    <parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="test.Test002_Create_Order">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="decreasingProductCountTest"/>
+          <include name="openBrowser"/>
+          <include name="increasingProductCountTest"/>
+        </methods>
+      </class> <!-- test.Test002_Create_Order -->
+    </classes>
+  </test> <!-- TestWithDemoAccount(failed) -->
+  <test thread-count="3" parallel="tests" name="TestWithQAAccount(failed)">
     <parameter name="ExcellFile" value="/ExcelData/wizcom.xlsx"/>
     <parameter name="browserName" value="chrome"/>
     <classes>
-      <class name="test.Test001_Login_Logout">
+      <class name="test.Test003_Convert_Quote_To_Order">
         <methods>
-          <include name="loginAllCasesTest"/>
-          <include name="setupExcelFile"/>
-          <include name="forgotPassTest"/>
-          <include name="passwordEyeTest"/>
-          <include name="bookaDemoTest"/>
-          <include name="openBrowser"/>
-          <include name="loginPageTitleTest"/>
-          <include name="bottomLineTest"/>
+          <include name="clickSubmitOrderButtonTest"/>
           <include name="closeBrowser"/>
-          <include name="logoutTest"/>
-          <include name="logoTest"/>
-          <include name="headingTest"/>
+          <include name="clickConvertToOrderTest"/>
+          <include name="handlingCheckbox1Test"/>
+          <include name="openBrowser"/>
+          <include name="clickSubmitQuoteTest"/>
+          <include name="orderCancelledTest"/>
+          <include name="handlingCancelOrderCheckboxTest"/>
+          <include name="handlingCheckbox2Test"/>
+          <include name="clickOnSubmit"/>
         </methods>
-      </class> <!-- test.Test001_Login_Logout -->
+      </class> <!-- test.Test003_Convert_Quote_To_Order -->
     </classes>
-  </test> <!-- TestOnChrome(failed) -->
+  </test> <!-- TestWithQAAccount(failed) -->
 </suite> <!-- Failed suite [Suite] -->
