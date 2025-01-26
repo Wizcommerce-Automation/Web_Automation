@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Smoke Testing" parallel="classes" thread-count="5">
+<suite name="Smoke Testing">
 	<test  name="TestOnChrome">
 	<parameter name="browserName" value="chrome"></parameter>
+	<parameter name="ExcellFile" value="/ExcelData/wizcom.xlsx"></parameter>
 		<classes>
 			<class name="test.Test001_Login_Logout" />
 			<class name="test.Test002_Create_Order" />

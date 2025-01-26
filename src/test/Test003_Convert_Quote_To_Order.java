@@ -111,7 +111,7 @@ public class Test003_Convert_Quote_To_Order extends BaseTest {
 		pomPages.POM4_Convert_Quote_To_Order details = new pomPages.POM4_Convert_Quote_To_Order();
 		details.verifyCustomerDetailsOnQuote();
 	}
-
+	
 	@Test(priority = 10, description = "Verify billing address details on quote")
 	@Severity(SeverityLevel.CRITICAL)
 	@Description("Test Description: Validating billing address details on quote Test")

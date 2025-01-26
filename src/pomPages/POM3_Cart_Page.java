@@ -3,6 +3,7 @@ package pomPages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -27,11 +28,11 @@ public class POM3_Cart_Page extends BaseTest {
 	WebElement customerSearchTextbox;
 
 //wizcom_automate
-	@FindBy(xpath = "//p[normalize-space()='Qa team']")
-	WebElement wizcom_Customer;
+	@FindBy(xpath = "//p[normalize-space()='Heman Test']")
+	WebElement HemanTest_Customer;
 //Zenith Technologies	
 	@FindBy(xpath = "//p[normalize-space()='Qa team']")
-	WebElement zenith_Customer;
+	WebElement QA_Customer;
 
 //	WebElement keepExisting_ReplaceCheckbox;
 	@FindBy(xpath = "//button[starts-with(text(),'Replace')]")
@@ -40,11 +41,11 @@ public class POM3_Cart_Page extends BaseTest {
 	@FindBy(xpath = "//button[starts-with(text(),\"Keep existing\")]")
 	WebElement keepExistingBtn;
 
-	@FindBy(xpath = "(//div[@id=\"db2fa53d-1512-4afe-8919-a847b4b005ef\"]/div)[2]")
-	WebElement cartIconOnWizcomCustomer;
+	@FindBy(xpath = "(//div[@id='f1f1a84d-adad-45ce-a20b-bd381f427c9b']/div)[2]")
+	WebElement cartIconOnHemanTestCustomer;
 
 	@FindBy(xpath = "(//div[@id=\"33223ce2-8f38-440d-9cb8-ef7cfd3e310c\"]/div)[2]")
-	WebElement cartIconOnZenithCustomer;
+	WebElement cartIconOnQACustomer;
 
 	@FindBy(xpath = "//button[text()=\"Create order\"]")
 	WebElement createOrderBtn2;
@@ -52,7 +53,7 @@ public class POM3_Cart_Page extends BaseTest {
 	@FindBy(xpath = "//button[starts-with(text(),\"Proceed\")]")
 	WebElement proceedBtn;
 
-	@FindBy(xpath = "//button[starts-with(text(),\"Submit order\")]")
+	@FindBy(xpath = "//button[starts-with(text(),'Submit order')]")
 	WebElement submitOrderBtn;
 
 	@FindBy(xpath = "(//button[contains(text(),'Submit')])[2]")
@@ -66,16 +67,22 @@ public class POM3_Cart_Page extends BaseTest {
 	WebElement threeDots;
 	
 	//Cancel button
-	@FindBy(xpath = "//span[normalize-space()='Cancel']")
+	@FindBy(xpath = "//span[contains(.,'Cancel')]")
 	WebElement cancelBtn;
 	
 	//Cancel order button
-	@FindBy(xpath = "//button[normalize-space()='Cancel order']")
+	@FindBy(xpath = "//button[contains(.,'Cancel')]")
 	WebElement cancelOrderBtn;
 	
 	// Cancel order verification
 	@FindBy(xpath = "//p[normalize-space()='Order cancelled']")
 	WebElement orderCancelled;
+	
+	@FindBy(xpath="//button[normalize-space()='Send for approval']")
+	WebElement sendForApprovalButton;
+	
+	@FindBy(xpath="(//button[@type='button'][normalize-space()='Send for approval'])[2]")
+	WebElement sendForApprovalPopup;
 
 	public POM3_Cart_Page() {
 		PageFactory.initElements(driver.get(), this);
@@ -106,14 +113,14 @@ public class POM3_Cart_Page extends BaseTest {
 	public void clickCustomerSearchTextbox() throws Exception {
 		if (user.getText().equals("DC")) {
 			Assert.assertTrue(customerSearchTextbox.isDisplayed(), "Both actual and expected are not same");
-			customerSearchTextbox.sendKeys("QA team");
+			customerSearchTextbox.sendKeys(getDataFromExcell(1, 3));
 			Thread.sleep(5000);
-			if (cartIconOnWizcomCustomer.isDisplayed() == false) {
-				Assert.assertTrue(wizcom_Customer.isDisplayed(), "Both actual and expected are not same");
-				wizcom_Customer.click();
+			if (cartIconOnHemanTestCustomer.isDisplayed() == false) {
+				Assert.assertTrue(HemanTest_Customer.isDisplayed(), "Both actual and expected are not same");
+				HemanTest_Customer.click();
 				Thread.sleep(5000);
 			} else {
-				wizcom_Customer.click();
+				HemanTest_Customer.click();
 				Thread.sleep(5000);
 				Assert.assertTrue(keepExistingBtn.isEnabled(), "Both actual and expected are not same");
 				Assert.assertTrue(replaceBtn.isEnabled(), "Both actual and expected are not same");
@@ -123,14 +130,14 @@ public class POM3_Cart_Page extends BaseTest {
 		} else if(user.getText().equals("QT"))
 		{
 			Assert.assertTrue(customerSearchTextbox.isDisplayed(), "Both actual and expected are not same");
-			customerSearchTextbox.sendKeys("Qa team");
+			customerSearchTextbox.sendKeys(getDataFromExcell(1, 3));
 			Thread.sleep(5000);
-			if (cartIconOnZenithCustomer.isDisplayed() == false) {
-				Assert.assertTrue(zenith_Customer.isDisplayed(), "Both actual and expected are not same");
-				zenith_Customer.click();
+			if (cartIconOnQACustomer.isDisplayed() == false) {
+				Assert.assertTrue(QA_Customer.isDisplayed(), "Both actual and expected are not same");
+				QA_Customer.click();
 				Thread.sleep(5000);
 			} else {
-				zenith_Customer.click();
+				QA_Customer.click();
 				Thread.sleep(5000);
 				Assert.assertTrue(keepExistingBtn.isEnabled(), "Both actual and expected are not same");
 				Assert.assertTrue(replaceBtn.isEnabled(), "Both actual and expected are not same");
@@ -164,9 +171,17 @@ public class POM3_Cart_Page extends BaseTest {
 // Click on submit order button
 	@Step("Click On Submit Order Button")
 	public void clickSubmitOrderButton() throws Exception {
-		Assert.assertTrue(submitOrderBtn.isEnabled(), "Both actual and expected are not same");
-		submitOrderBtn.click();
-		Thread.sleep(5000);
+		try {
+	        if (sendForApprovalButton.isDisplayed()) {
+	            sendForApprovalButton.click();
+	            Thread.sleep(1000);
+	            sendForApprovalPopup.click();
+	        }
+	    } catch (NoSuchElementException e) {
+	        Assert.assertTrue(submitOrderBtn.isEnabled(), "Submit Order Button is not enabled");
+	        submitOrderBtn.click();
+	        Thread.sleep(5000);
+	    }
 	}
 
 // Again click on submit button

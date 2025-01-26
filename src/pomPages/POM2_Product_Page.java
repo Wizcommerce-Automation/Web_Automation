@@ -2,10 +2,17 @@ package pomPages;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -16,6 +23,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import generic.BaseTest;
@@ -155,19 +165,36 @@ public class POM2_Product_Page extends BaseTest {
 	@FindBy(xpath="(//p[normalize-space()='Customize product']/parent::div/parent::div//*[name()='svg'])[3]")
 	WebElement customizeSidebarCloseButton;
 	
+	@FindBy(xpath="//p[normalize-space()='All Variants']")
+	WebElement variantDrawer;
+	
+	@FindBy(xpath="((//p[normalize-space()='All Variants']/parent::div/following-sibling::div[1])/div/div[3]//div[contains(text(), 'Add to cart')])[1]")
+	WebElement variantAddToCart;
+	
+	@FindBy(xpath="//button[normalize-space()='Done']")
+	WebElement doneButton;
+	
 	private WebDriverWait wait;
-
+	
+	
 	public POM2_Product_Page() {
-		PageFactory.initElements(driver.get(), this);
-		wait = new WebDriverWait(driver.get(), Duration.ofSeconds(15));
+        PageFactory.initElements(driver.get(), this);
+        wait = new WebDriverWait(driver.get(), Duration.ofSeconds(5));
+    }
+
+	@Step("Add product to cart")
+	public void productAddToCart(WebElement product) {
+		product.click();
+		if(variantDrawer.isDisplayed()) {
+			variantAddToCart.click();
+			doneButton.click();
+		}
 	}
 	
 
 // Click on product button on dashboard
 	@Step("Click on product button on dashboard")
 	public void clickProduct() throws Exception {
-//		System.out.println(JSONUtil.getXPath("productBtn"));
-//		WebElement productBtn = driver.get().findElement(By.xpath(JSONUtil.getXPath("productBtn")));
 		wait.until(ExpectedConditions.elementToBeClickable(productBtn)).click();
 	}
 
@@ -211,15 +238,11 @@ public class POM2_Product_Page extends BaseTest {
 
 // Searching for products in the search product textbox and selecting attributes from dropdown
 	@Step("Click on Search Product Box \n\n Search chair \n\n Click on Attributes dropdown \n\n Press Enter")
-	public void searchProductBox() throws InterruptedException {
-//	    Scanner sc = new Scanner(System.in);
-//		System.out.println("enter the name of the product");
-//		String product_Name = sc.nextLine();
-//		textbox.sendKeys(product_Name); //user can also enter data
+	public void searchProductBox() throws InterruptedException, IOException {
 		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		Assert.assertTrue(searchTextbox.isDisplayed(), "Both actual and expected are not same");
 		Thread.sleep(3000);		
-		searchTextbox.sendKeys("chair");
+		searchTextbox.sendKeys(getDataFromExcell(1, 2));
 		for (int i = 0; i <= searchDd.size(); i++) {
 			String text = searchDd.get(i).getText();
 			System.out.print(text + " ");
@@ -231,6 +254,7 @@ public class POM2_Product_Page extends BaseTest {
 		}
 		Thread.sleep(1000);
 	}
+	
 	
 	public void productSelection(WebElement product) {
 		if(allVariantsSidebar.isDisplayed()) {
@@ -244,16 +268,15 @@ public class POM2_Product_Page extends BaseTest {
 	public void selectProduct1() throws Exception {
 
 		try {
-//			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-			Thread.sleep(3000);
 			Assert.assertTrue(product1.isEnabled(), "Both actual and expected are not same");
-			product1.click();
+			productAddToCart(product1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
+	
 
 // Adding second product to the cart that appears after product searched
 	@Step("Click on Add to Cart button of Product 2")
@@ -263,7 +286,7 @@ public class POM2_Product_Page extends BaseTest {
 //			driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 			Thread.sleep(3000);
 			Assert.assertTrue(product2.isEnabled(), "Both actual and expected are not same");
-			product2.click();
+			productAddToCart(product2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -280,7 +303,7 @@ public class POM2_Product_Page extends BaseTest {
 			Thread.sleep(3000);
 			Assert.assertTrue(product3.isEnabled(), "Both actual and expected are not same");
 			
-			product3.click();
+			productAddToCart(product3);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -297,7 +320,7 @@ public class POM2_Product_Page extends BaseTest {
 			Thread.sleep(3000);
 			Assert.assertTrue(product4.isEnabled(), "Both actual and expected are not same");
 
-			product4.click();
+			productAddToCart(product4);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -313,6 +336,7 @@ public class POM2_Product_Page extends BaseTest {
 				Assert.assertTrue(product5.isEnabled(), "Both actual and expected are not same");
 
 				product5.click();
+				productAddToCart(product5);
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
